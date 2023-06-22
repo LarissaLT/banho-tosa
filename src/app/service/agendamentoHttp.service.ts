@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Cachorro } from 'app/service/cachorroHttp.service';
 import { Servico } from './servicoHttp.service';
@@ -8,10 +8,11 @@ import { Tutor } from './tutorHttp.service';
 
 export interface Agendamento{
   id: number,
-  data: String,
-  servicos: Servico[],
+  data: Date,
+  servico: Servico,
   funcionario: Funcionario,
   cachorro: Cachorro,
+  // pagamento: string
 }
 
 export interface DadosFormAgendamento{

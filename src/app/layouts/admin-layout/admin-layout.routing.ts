@@ -6,6 +6,7 @@ import { CachorroComponent } from '../../pages/cachorro/cachorro.component';
 import { ServicoComponent } from '../../pages/servico/servico.component';
 import { FuncionarioComponent } from '../../pages/funcionario/funcionario.component';
 import { TutorComponent } from '../../pages/tutor/tutor.component';
+import {AgendamentoComponent} from '../../pages/agendamento/agendamento.component';
 import { TableComponent } from '../../pages/table/table.component';
 import { TypographyComponent } from '../../pages/typography/typography.component';
 import { IconsComponent } from '../../pages/icons/icons.component';
@@ -16,7 +17,7 @@ import { ListaTutorComponent } from 'app/pages/tutor-listar/tutor-listar.compone
 import { ListaCachorroComponent } from 'app/pages/cachorro-listar/cachorro-listar.component';
 import { ListaFuncionarioComponent } from 'app/pages/funcionario-listar/funcionario-listar.component';
 import { ListaServicoComponent } from 'app/pages/servico-listar/servico-listar.component';
-import {AgendamentoComponent} from '../../pages/agendamento/agendamento.component';
+
 
 
 

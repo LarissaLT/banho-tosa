@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {Agendamento, AgendamentoHttpService, DadosFormAgendamento} from 'app/service/agendamentoHttp.service';
+import {Cachorro} from '../../service/cachorroHttp.service';
+import {Servico} from '../../service/servicoHttp.service';
 
 @Component({
   selector: 'agendamento-cmp',
@@ -32,6 +34,7 @@ export class AgendamentoComponent implements OnInit {
   }
 
   salvarAgendamento(agendamento: Agendamento) {
+
     this.agendamentoService.salvar(agendamento).subscribe(
       {
         next: (agendamentoSalvo: Agendamento) => {
@@ -64,9 +67,8 @@ export class AgendamentoComponent implements OnInit {
   }
 
   salvarOuAtualizar(form: NgForm) {
-    let agendamento = this.agendamento
-
-    console.log(this.agendamento)
+    const agendamento = this.agendamento
+    console.log(agendamento)
 
     if (agendamento.id) {
       this.atualizarAgendamento(agendamento)
@@ -100,5 +102,5 @@ export class AgendamentoComponent implements OnInit {
       },
     });
   }
-
 }
+

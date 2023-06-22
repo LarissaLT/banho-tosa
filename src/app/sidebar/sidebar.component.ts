@@ -16,7 +16,7 @@ export const ROUTES: RouteInfo[] = [
   {path: '/notifications', title: 'Notifications', icon: 'nc-bell-55', class: ''},
   // { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
   {path: '/tutor', title: 'Perfil do Tutor', icon: 'nc-single-02', class: ''},
-  {path: '/agandamento', title: 'Agendar', icon: 'nc-single-02', class: ''},
+  {path: '/agendamento', title: 'Agendar', icon: 'nc-single-02', class: ''},
   {path: '/cachorro', title: 'Perfil do Cachorro', icon: 'nc-single-02', class: ''},
   {path: '/servico', title: 'Perfil de Serviço', icon: 'nc-single-02', class: ''},
   {path: '/funcionario', title: 'Perfil do Funcionário', icon: 'nc-single-02', class: ''},
