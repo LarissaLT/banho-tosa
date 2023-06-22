@@ -4,34 +4,40 @@
       <div class="card-header">
         <div class="row">
           <div class="col-8">
-            <h4 class="card-title">Lista de Funcionários</h4>
+            <h4 class="card-title">Lista de Agendamentos</h4>
           </div>
           <div class="col-4 text-right">
-            <a class="btn btn-warning" [routerLink]="['/funcionario']">Cadastrar</a>
+            <a class="btn btn-warning" [routerLink]="['/agendamento']">Cadastrar</a>
           </div>
         </div>
       </div>
       <div class="card-body">
-        <h1 *ngIf="erro"> deu merda</h1>
         <div class="table-responsive" style="overflow: hidden !important;">
           <table class="table">
             <thead class=" text-warning">
-              <th>Nome</th>
+              <th>Serviço</th>
+              <th>Funcionário</th>
+              <th>Cachorro</th>
+              <th>Tutor</th>
               <th></th>
             </thead>
+
             <tbody>
-              <tr *ngFor="let funcionario of funcionariosTableData">
-                <td>{{funcionario.nome}}</td>
+              <tr *ngFor="let agendamento of agendamentosTableData">
+                <td>{{ agendamento.servico.nome }}</td>
+                <td>{{ agendamento.funcionario.nome }}</td>
+                <td>{{ agendamento.cachorro.nome }}</td>
+                <td>{{ agendamento.tutor.nome }}</td>
                 <td class="text-right">
-                <a [routerLink]="['/funcionario', funcionario.id]">
+                <a [routerLink]="['/agendamento', agendamento.id]">
                   <button class="btn btn-info btn-round" title="Atualizar">
-                    <i class="nc-icon nc-refresh-69"></i>
+                      <i class="nc-icon nc-refresh-69"></i>
                   </button>
                 </a>
-                <button class="btn btn-danger btn-round" (click)="deletarFuncionario(funcionario.id)" title="Excluir">
+                <button class="btn btn-danger btn-round" (click)="deletarAgendamento(agendamento.id)" title="Excluir">
                   <i class="nc-icon nc-simple-remove"></i>
                 </button>
-              </tr>
+            </tr>
             </tbody>
           </table>
         </div>

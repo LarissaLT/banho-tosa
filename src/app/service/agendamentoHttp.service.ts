@@ -12,6 +12,7 @@ export interface Agendamento{
   servico: Servico,
   funcionario: Funcionario,
   cachorro: Cachorro,
+  tutor: Tutor,
   // pagamento: string
 }
 

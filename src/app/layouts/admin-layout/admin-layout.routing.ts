@@ -14,6 +14,7 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { NotificationsComponent } from '../../pages/notifications/notifications.component';
 import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 import { ListaTutorComponent } from 'app/pages/tutor-listar/tutor-listar.component';
+import { ListaAgendamentoComponent } from 'app/pages/agendamento-listar/agendamento-listar.component';
 import { ListaCachorroComponent } from 'app/pages/cachorro-listar/cachorro-listar.component';
 import { ListaFuncionarioComponent } from 'app/pages/funcionario-listar/funcionario-listar.component';
 import { ListaServicoComponent } from 'app/pages/servico-listar/servico-listar.component';
@@ -37,6 +38,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',            component: NotificationsComponent },
     { path: 'upgrade',                  component: UpgradeComponent },
     { path: 'tutor-listar',             component: ListaTutorComponent },
+    { path: 'agendamento-listar',       component: ListaAgendamentoComponent },
     { path: 'cachorro-listar',          component: ListaCachorroComponent },
     { path: 'funcionario-listar',       component: ListaFuncionarioComponent },
     { path: 'servico-listar',           component: ListaServicoComponent },

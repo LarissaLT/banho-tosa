@@ -24,6 +24,7 @@ import {ListaTutorComponent} from 'app/pages/tutor-listar/tutor-listar.component
 import {ListaCachorroComponent} from 'app/pages/cachorro-listar/cachorro-listar.component';
 import {ListaFuncionarioComponent} from 'app/pages/funcionario-listar/funcionario-listar.component';
 import {ListaServicoComponent} from 'app/pages/servico-listar/servico-listar.component';
+import {ListaAgendamentoComponent} from '../../pages/agendamento-listar/agendamento-listar.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import {ListaServicoComponent} from 'app/pages/servico-listar/servico-listar.com
     ListaCachorroComponent,
     ListaFuncionarioComponent,
     ListaServicoComponent,
+    ListaAgendamentoComponent,
 
   ]
 })
