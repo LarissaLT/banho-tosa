@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Dados</h5>
+      </div>
+      <div class="card-body">
+        <form #agendamentoForm="ngForm" (ngSubmit)="salvarOuAtualizar(agendamentoForm)">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Serviço</label>
+                <input type="text" class="form-control" name="servico" [(ngModel)]="agendamento.servicos" #servico="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>Funcionário</label>
+                <input type="text" class="form-control" name="funcionario" [(ngModel)]="agendamento.funcionario" #funcionario="ngModel">
+              </div>
+            </div>
+            <div class="col-md-8 pl-1">
+              <div class="form-group">
+                <label>Cachorro</label>
+                <select class="form-control" name="cachorro" [(ngModel)]="agendamento.cachorro" #name="ngModel">
+                  <option *ngFor="let cachorro of dadosFormAgendamento.cachorros" [value]="cachorro">{{ cachorro.nome }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-warning btn-round">Salvar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

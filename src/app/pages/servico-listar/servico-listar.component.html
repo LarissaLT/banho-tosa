@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Lista de Serviços</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive" style="overflow: hidden !important;">
+          <table class="table">
+            <thead class=" text-warning">
+              <th>Nome</th>
+              <th>Peço</th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let servico of servicosTableData">
+                <td>{{servico.nome}}</td>
+                <td>{{servico.preco}}</td>
+                <td class="text-right">
+                  <a [routerLink]="['/servico', servico.id]">
+                    <button class="btn btn-info btn-round" title="Atualizar">
+                      <i class="nc-icon nc-refresh-69"></i>
+                    </button>
+                  </a>
+                  <button class="btn btn-danger btn-round" (click)="deletarServico(servico.id)" title="Excluir">
+                    <i class="nc-icon nc-simple-remove"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

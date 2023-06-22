@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Dados</h5>
+      </div>
+      <!-- {{ cachorro | json}} -->
+      <div class="card-body">
+        <form #cachorroForm="ngForm" (ngSubmit)="salvarOuAtualizar(cachorroForm)">
+          <div class="row">
+            <div class="col-md-7 pr-2">
+              <div class="form-group">
+                <label>Nome</label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]="cachorro.nome" #name="ngModel">
+              </div>
+            </div>
+            <div class="col-md-5 pr-2">
+              <div class="form-group">
+                <label>Raça</label>
+                <input type="text" class="form-control" name="raca" [(ngModel)]="cachorro.raca" #name="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 pr-3">
+              <div class="form-group">
+                <label>Idade</label>
+                <input type="number" class="form-control" name="idade" [(ngModel)]="cachorro.idade" #name="ngModel">
+              </div>
+            </div>
+            <div class="col-md-4 pr-3">
+              <div class="form-group">
+                <label>Porte</label>
+                <select class="form-control" name="porte" [(ngModel)]="cachorro.porte" #name="ngModel">
+                  <option *ngFor="let porte of portes" [value]="porte">{{ porte }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 pr-3">
+              <div class="form-group">
+                <label>Gênero</label>
+                <select class="form-control" name="genero" [(ngModel)]="cachorro.genero" #name="ngModel">
+                  <option *ngFor="let genero of generos" [value]="genero">{{ genero }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-warning btn-round">Salvar</button>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
