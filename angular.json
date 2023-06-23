@@ -27,7 +27,8 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "src/assets/scss/paper-dashboard.scss",
               "node_modules/ngx-toastr/toastr.css",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css,",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           },
@@ -99,7 +100,8 @@
               "node_modules/arrive/src/arrive.js",
               "node_modules/moment/moment.js",
               "node_modules/chartist/dist/chartist.js",
-              "node_modules/bootstrap-notify/bootstrap-notify.js"
+              "node_modules/bootstrap-notify/bootstrap-notify.js",
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
             ],
             "styles": [
               "src/styles.css",

@@ -1,5 +1,6 @@
 import { TutorHttpService, Tutor } from '../../service/tutorHttp.service';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'tutor-listar-cmp',

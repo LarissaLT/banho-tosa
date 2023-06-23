@@ -25,6 +25,9 @@ import {ListaCachorroComponent} from 'app/pages/cachorro-listar/cachorro-listar.
 import {ListaFuncionarioComponent} from 'app/pages/funcionario-listar/funcionario-listar.component';
 import {ListaServicoComponent} from 'app/pages/servico-listar/servico-listar.component';
 import {ListaAgendamentoComponent} from '../../pages/agendamento-listar/agendamento-listar.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import {ListaAgendamentoComponent} from '../../pages/agendamento-listar/agendame
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    MatIconModule,
+    MatInputModule,
+    MatDatepickerModule
   ],
   declarations: [
     DashboardComponent,

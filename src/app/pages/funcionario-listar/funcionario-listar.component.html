@@ -7,8 +7,11 @@
             <h4 class="card-title">Lista de Funcionários</h4>
           </div>
           <div class="col-4 text-right">
-            <a class="btn btn-warning" [routerLink]="['/funcionario']">Cadastrar</a>
-          </div>
+            <a [routerLink]="['/funcionario']">
+              <button class="btn btn-outline-warning btn-round">
+                <i class="fa fa-plus"></i> Cadastrar
+              </button>
+            </a>          </div>
         </div>
       </div>
       <div class="card-body">
@@ -24,12 +27,12 @@
                 <td>{{funcionario.nome}}</td>
                 <td class="text-right">
                 <a [routerLink]="['/funcionario', funcionario.id]">
-                  <button class="btn btn-info btn-round" title="Atualizar">
-                    <i class="nc-icon nc-refresh-69"></i>
+                  <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">
+                    <i class="fa fa-pencil"></i>
                   </button>
                 </a>
-                <button class="btn btn-danger btn-round" (click)="deletarFuncionario(funcionario.id)" title="Excluir">
-                  <i class="nc-icon nc-simple-remove"></i>
+                <button class="btn btn-danger btn-icon btn-round btn-sm" (click)="deletarFuncionario(funcionario.id)" title="Excluir">
+                  <i class="fa fa-trash"></i>
                 </button>
               </tr>
             </tbody>
