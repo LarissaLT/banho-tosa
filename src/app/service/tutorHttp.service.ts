@@ -8,6 +8,7 @@ export interface Tutor{
   nome: string,
   celular: number,
   email: string,
+  senha: string,
   endereco: string,
   cachorros: Cachorro[]
 }
