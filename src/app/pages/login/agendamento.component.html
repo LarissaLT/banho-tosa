@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Dados</h5>
+      </div>
+      <div class="card-body">
+        <form #agendamentoForm="ngForm" (ngSubmit)="salvarOuAtualizar(agendamentoForm)">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Serviço</label>
+                <select class="form-control" name="servico" [(ngModel)]="agendamento.servico" #name="ngModel">
+                  <option *ngFor="let servico of dadosFormAgendamento.servicos" [ngValue]="servico" >{{ servico.nome }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Tutor</label>
+                <select class="form-control" name="tutor" [(ngModel)]="agendamento.tutor" #name="ngModel">
+                  <option *ngFor="let tutor of dadosFormAgendamento.tutores" [ngValue]="tutor">{{ tutor.nome }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Funcionário</label>
+                <select class="form-control" name="funcionario" [(ngModel)]="agendamento.funcionario" #name="ngModel">
+                  <option *ngFor="let funcionario of dadosFormAgendamento.funcionarios" [ngValue]="funcionario">{{ funcionario.nome }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Cachorro</label>
+                <select class="form-control" name="cachorro" [(ngModel)]="agendamento.cachorro" #name="ngModel">
+                  <option *ngFor="let cachorro of dadosFormAgendamento.cachorros" [ngValue]="cachorro">{{ cachorro.nome }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-warning btn-round">Salvar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
