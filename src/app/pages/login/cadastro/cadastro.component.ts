@@ -14,8 +14,16 @@ export class CadastroComponent implements OnInit{
   erro: string;
   cliente: Cliente = {} as Cliente;
 
+  password: string;
+  showPassword: boolean;
+
   constructor(
-    private cadastroService: CadastroHttpService, private router: Router, private route: ActivatedRoute) { }
+    private cadastroService: CadastroHttpService, private router: Router, private route: ActivatedRoute) {
+
+    this.showPassword = undefined;
+  }
+
+
 
   ngOnInit() { }
 
