@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import {AuthenticationHttpService, Signin} from '../../../service/authenticationHttp.service';
+
 
 @Component({
   selector: 'login-cmp',
@@ -13,8 +14,25 @@ export class LoginComponent {
   password: string;
   showPassword: boolean;
 
-  constructor() {
+  constructor(private authService:AuthenticationHttpService) {
     this.showPassword = undefined;
   }
 
+  login(form: NgForm){
+    let login: Signin = {
+      email: form.value.email,
+      senha: form.value.senha,
+    } as Signin;
+    this.authService.signin(login).subscribe(
+      {
+        next: auth => {
+          localStorage.setItem('jwtToken', auth.token);
+          console.log("token: "+ auth.token)
+        },
+        error: err => {
+          console.log(err)
+        }
+      }
+    )
+  }
 }

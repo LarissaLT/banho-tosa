@@ -9,21 +9,22 @@
   <div class="col-md-12">
     <div class="card card-user">
       <div class="card-body">
-        <form>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" >
           <div class="decoration-block">
             <p class="decoration-text">Sign in</p>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="E-mail">
+                <input type="text" class="form-control" placeholder="E-mail" ngModel name="email" >
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <input type="password" id="password" class="form-control" placeholder="Senha" [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"><br>
+                <input type="password" id="password" class="form-control" placeholder="Senha" ngModel name="senha"
+                       [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" ><br>
                 <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
                 <label for="showPasswordCheckbox">Mostrar senha</label>
               </div>
