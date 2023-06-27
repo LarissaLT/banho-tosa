@@ -17,6 +17,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import {HomeComponent} from './pages/usuario/home/home.component';
+import {SobreComponent} from './pages/usuario/sobre/sobre.component';
+import {FuncionamentoComponent} from './pages/usuario/funcionamento/funcionamento.component';
+import {NgOptimizedImage} from '@angular/common';
 
 
 
@@ -24,6 +28,9 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    HomeComponent,
+    SobreComponent,
+    FuncionamentoComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -39,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     MatSliderModule,
     MatButtonModule,
     HttpClientModule,
+    NgOptimizedImage,
 
 
   ],
