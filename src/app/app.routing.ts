@@ -6,6 +6,7 @@ import {SobreComponent} from './pages/usuario/sobre/sobre.component';
 import {FuncionamentoComponent} from './pages/usuario/funcionamento/funcionamento.component';
 import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
+import {AppComponent} from './app.component';
 
 
 export const AppRoutes: Routes = [
