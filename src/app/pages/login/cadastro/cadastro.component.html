@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="cadastro.component.css">
+</head>
+<body>
+<div class="grid-container">
+  <div class="left-section">
+    <img class="img-logo" src="https://img.freepik.com/fotos-gratis/cao-bonito-vista-frontal-em-traje_23-2148423660.jpg?w=360&t=st=1687840153~exp=1687840753~hmac=d9ceb4b658a6c780877557fec280d461579c7da2616e5fe86f68c0cba9a93005" alt="...">
+  </div>
+  <div class="right-section">
+    <div class="card card-user">
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]="cliente.nome" #name="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>E-mail</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="cliente.email" #name="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Senha</label>
+                <input type="text" class="form-control" name="senha" [(ngModel)]="cliente.senha" #name="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="update ml-auto mr-auto">
+            <button type="submit" class="btn btn-warning btn-round">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

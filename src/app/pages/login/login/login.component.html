@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+<!--  <link rel="stylesheet" href="cadastro.component.css">-->
+</head>
+<body>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-body">
+        <form>
+          <div class="decoration-block">
+            <p class="decoration-text">Sign in</p>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="E-mail">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="password" id="password" class="form-control" placeholder="Senha" [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"><br>
+                <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
+                <label for="showPasswordCheckbox">Mostrar senha</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-warning btn-round btn-block">LOGIN</button>
+                <p class="create-account">Não tem uma conta? <a href="#" class="signup-link">Sign up</a></p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

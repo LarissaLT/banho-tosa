@@ -1,0 +1,114 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(rgba(47, 23, 15, 0.1), rgba(47, 23, 15, 0.1)), url("fundo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Adiciona uma cor de fundo para a card */
+}
+
+.decoration-block {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 90%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  background-color: #ffa500;
+  border-radius: 10px;
+}
+
+.decoration-text {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.signup-link {
+  color: #ffa500 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.password-input {
+  position: relative;
+}
+
+.checkbox-label {
+  margin-left: 5px;
+}
+
+.password-input input[type="checkbox"]:checked + .checkbox-label::before {
+  content: '\25CF'; /* Utilize um caractere diferente para representar a visualização da senha */
+}
+
+.password-input input[type="checkbox"] {
+  display: none;
+}
+
+#showPasswordCheckbox{
+  margin: 5px 5px 0 0;
+}
+
+.card-header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 200px 20px 20px 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.btn-round {
+  border-radius: 30px;
+  width: 100%;
+}
+
+.create-account {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.create-account a {
+  color: #333;
+  text-decoration: none;
+}
+
+.create-account a:hover {
+  text-decoration: underline;
+}

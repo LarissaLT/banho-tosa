@@ -4,12 +4,16 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import {HomeComponent} from './pages/usuario/home/home.component';
 import {SobreComponent} from './pages/usuario/sobre/sobre.component';
 import {FuncionamentoComponent} from './pages/usuario/funcionamento/funcionamento.component';
+import {LoginComponent} from './pages/login/login/login.component';
+import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
 
 
 export const AppRoutes: Routes = [
   { path: 'home',                component: HomeComponent },
   { path: 'sobre',               component: SobreComponent },
   { path: 'funcionamento',       component: FuncionamentoComponent },
+  { path: 'login',               component: LoginComponent },
+  { path: 'cadastro',            component: CadastroComponent },
 
   {
     path: '',

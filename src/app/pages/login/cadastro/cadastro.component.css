@@ -1,0 +1,68 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card-user {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+}
+
+.img-logo {
+  width: 60%;
+  height: 80%;
+  object-fit: contain; /* Mantém a proporção da imagem */
+}
+
+.card-header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.btn-round {
+  border-radius: 30px;
+  width: 100%;
+}
