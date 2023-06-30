@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 export interface Cachorro {
@@ -33,27 +33,35 @@ export class CachorroHttpService {
   constructor(private http: HttpClient) { }
 
   listar() : Observable<Cachorro[]>{
-    return this.http.get<Cachorro[]>(this.apiUrl)
+    return this.http.get<Cachorro[]>(this.apiUrl, { headers: this.getHeaders() })
   }
 
   salvar(cachorro: Cachorro): Observable<Cachorro> {
     console.log(cachorro)
-    return this.http.post<Cachorro>(this.apiUrl, cachorro)
+    return this.http.post<Cachorro>(this.apiUrl, cachorro, { headers: this.getHeaders() })
   }
 
   atualizar(cachorro: Cachorro): Observable<Cachorro> {
     const url = `${this.apiUrl}/${cachorro.id}`;
-    return this.http.put<Cachorro>(url, cachorro);
+    return this.http.put<Cachorro>(url, cachorro, { headers: this.getHeaders() });
   }
 
   buscarPorId(id: number): Observable<Cachorro> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Cachorro>(url);
+    return this.http.get<Cachorro>(url, { headers: this.getHeaders() });
   }
 
   deletar(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<void>(url)
+    return this.http.delete<void>(url, { headers: this.getHeaders() })
+  }
+
+  private getHeaders(): HttpHeaders {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('jwtToken')}` // Add the JWT token to the Authorization header
+    });
+    return headers;
   }
 }
 

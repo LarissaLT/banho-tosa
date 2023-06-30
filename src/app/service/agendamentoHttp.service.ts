@@ -37,26 +37,34 @@ export class AgendamentoHttpService {
   }
 
   listar() : Observable<Agendamento[]>{
-    return this.http.get<Agendamento[]>(this.apiUrl)
+    return this.http.get<Agendamento[]>(this.apiUrl,{ headers: this.getHeaders() })
   }
 
   salvar(agendamento: Agendamento): Observable<Agendamento> {
-    return this.http.post<Agendamento>(this.apiUrl, agendamento)
+    return this.http.post<Agendamento>(this.apiUrl, agendamento, { headers: this.getHeaders() })
   }
 
   atualizar(agendamento: Agendamento): Observable<Agendamento> {
     const url = `${this.apiUrl}/${agendamento.id}`;
-    return this.http.put<Agendamento>(url, agendamento);
+    return this.http.put<Agendamento>(url, agendamento, { headers: this.getHeaders() });
   }
 
   buscarPorId(id: number): Observable<Agendamento> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Agendamento>(url);
+    return this.http.get<Agendamento>(url, { headers: this.getHeaders() });
   }
 
   deletar(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<void>(url)
+    return this.http.delete<void>(url, { headers: this.getHeaders() })
+  }
+
+  private getHeaders(): HttpHeaders {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('jwtToken')}` // Add the JWT token to the Authorization header
+    });
+    return headers;
   }
 }
 

@@ -12,9 +12,10 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/home">Home</a></li>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="../sobre/sobre.component.html">Sobre</a></li>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="../funcionamento/funcionamento.component.html">Funcionamento</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/login">Login</a></li>
       </ul>
     </div>
   </div>
@@ -35,7 +36,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Nome Completo</label>
-                  <input type="text" class="form-control" name="nome" [(ngModel)]="cliente.nome" #name="ngModel">
+                  <input type="text" class="form-control" name="nome" >
                 </div>
               </div>
             </div>
@@ -43,7 +44,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>E-mail</label>
-                  <input type="text" class="form-control" name="email" [(ngModel)]="cliente.email" #name="ngModel">
+                  <input type="text" class="form-control" name="email" >
                 </div>
               </div>
             </div>
@@ -51,7 +52,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Senha</label>
-                  <input type="text" class="form-control" name="senha" [(ngModel)]="cliente.senha" #name="ngModel"
+                  <input type="text" class="form-control" name="senha"  #name="ngModel"
                          [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"><br>
                   <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
                   <label for="showPasswordCheckbox">Mostrar senha</label>
