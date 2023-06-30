@@ -23,6 +23,7 @@ import {FuncionamentoComponent} from './pages/usuario/funcionamento/funcionament
 import {NgOptimizedImage} from '@angular/common';
 import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -51,6 +52,7 @@ import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
     MatButtonModule,
     HttpClientModule,
     NgOptimizedImage,
+    MatDatepickerModule
 
 
   ],

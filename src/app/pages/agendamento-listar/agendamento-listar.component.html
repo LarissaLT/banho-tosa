@@ -18,6 +18,7 @@
         <div class="table-responsive" style="overflow: hidden !important;">
           <table class="table">
             <thead class=" text-warning">
+              <th>Data</th>
               <th>Serviço</th>
               <th>Funcionário</th>
               <th>Cachorro</th>
@@ -26,6 +27,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let agendamento of agendamentosTableData">
+                <td>{{ agendamento.data | date:'dd/MM/yyyy'}}</td>
                 <td>{{ agendamento.servico.nome }}</td>
                 <td>{{ agendamento.funcionario.nome }}</td>
                 <td>{{ agendamento.cachorro.nome }}</td>

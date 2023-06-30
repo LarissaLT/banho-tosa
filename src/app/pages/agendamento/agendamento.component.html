@@ -2,10 +2,21 @@
   <div class="col-md-12">
     <div class="card card-user">
       <div class="card-header">
-        <h5 class="card-title">Dados</h5>
+        <h5 class="card-title">Agendamento</h5>
       </div>
       <div class="card-body">
         <form #agendamentoForm="ngForm" (ngSubmit)="salvarOuAtualizar(agendamentoForm)">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                <label>Data</label>
+                <input type="text"  id="datepicker"  class="form-control"  name="data" [(ngModel)]="agendamento.data" #name="ngModel"
+                style="background-color: white">
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">

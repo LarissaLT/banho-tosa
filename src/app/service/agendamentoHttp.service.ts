@@ -33,7 +33,7 @@ export class AgendamentoHttpService {
   constructor(private http: HttpClient) { }
 
   buscarDadosForm() : Observable<DadosFormAgendamento>{
-    return this.http.get<DadosFormAgendamento>(this.apiUrl + '/form')
+    return this.http.get<DadosFormAgendamento>(this.apiUrl + '/form', { headers: this.getHeaders() })
   }
 
   listar() : Observable<Agendamento[]>{
@@ -41,6 +41,7 @@ export class AgendamentoHttpService {
   }
 
   salvar(agendamento: Agendamento): Observable<Agendamento> {
+    console.log(this.getHeaders())
     return this.http.post<Agendamento>(this.apiUrl, agendamento, { headers: this.getHeaders() })
   }
 

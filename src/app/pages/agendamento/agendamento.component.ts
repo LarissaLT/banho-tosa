@@ -1,21 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {Agendamento, AgendamentoHttpService, DadosFormAgendamento} from 'app/service/agendamentoHttp.service';
-import {Cachorro} from '../../service/cachorroHttp.service';
-import {Servico} from '../../service/servicoHttp.service';
+import flatpickr from 'flatpickr';
+
 
 @Component({
   selector: 'agendamento-cmp',
   moduleId: module.id,
-  templateUrl: 'agendamento.component.html'
+  templateUrl: 'agendamento.component.html',
 })
 
-export class AgendamentoComponent implements OnInit {
+export class AgendamentoComponent implements OnInit,AfterViewInit {
   agendamento: Agendamento = {} as Agendamento;
   dadosFormAgendamento: DadosFormAgendamento = {} as DadosFormAgendamento
 
   erro: string;
+  date: Date
 
   constructor(
     private agendamentoService: AgendamentoHttpService, private router: Router, private route: ActivatedRoute) {
@@ -32,9 +33,15 @@ export class AgendamentoComponent implements OnInit {
       this.buscarAgendamento(idAgendamento);
     }
   }
-
+  ngAfterViewInit() {
+    flatpickr('#datepicker', {
+      // Flatpickr configuration options
+      // For example:
+      dateFormat: 'Y-m-d',
+      minDate: 'today'
+    });
+  }
   salvarAgendamento(agendamento: Agendamento) {
-
     this.agendamentoService.salvar(agendamento).subscribe(
       {
         next: (agendamentoSalvo: Agendamento) => {

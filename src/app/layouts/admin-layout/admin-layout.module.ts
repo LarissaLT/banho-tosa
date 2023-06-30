@@ -27,7 +27,7 @@ import {ListaServicoComponent} from 'app/pages/servico-listar/servico-listar.com
 import {ListaAgendamentoComponent} from '../../pages/agendamento-listar/agendamento-listar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 @NgModule({
@@ -38,7 +38,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     NgbModule,
     MatIconModule,
     MatInputModule,
-    MatDatepickerModule
   ],
   declarations: [
     DashboardComponent,

@@ -99,12 +99,14 @@
               "node_modules/moment/moment.js",
               "node_modules/chartist/dist/chartist.js",
               "node_modules/bootstrap-notify/bootstrap-notify.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+              "node_modules/flatpickr/dist/flatpickr.js"
             ],
             "styles": [
               "src/styles.css",
               "src/assets/sass/paper-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "node_modules/flatpickr/dist/flatpickr.css"
             ],
             "assets": [
               "src/assets",
