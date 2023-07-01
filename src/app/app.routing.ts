@@ -7,6 +7,8 @@ import {FuncionamentoComponent} from './pages/usuario/funcionamento/funcionament
 import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
 import {AppComponent} from './app.component';
+import {AgendamentoComponent} from './pages/agendamento/agendamento.component';
+import {AuthGuard} from './service/AuthGuard';
 
 
 export const AppRoutes: Routes = [
@@ -22,7 +24,7 @@ export const AppRoutes: Routes = [
     pathMatch: 'full',
   }, {
     path: '',
-    component: AdminLayoutComponent,
+    component: AdminLayoutComponent, canActivate: [AuthGuard],
     children: [
         {
       path: '',

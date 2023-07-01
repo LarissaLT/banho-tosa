@@ -24,6 +24,7 @@ import {NgOptimizedImage} from '@angular/common';
 import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {AuthGuard} from './service/AuthGuard';
 
 
 
@@ -52,7 +53,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatButtonModule,
     HttpClientModule,
     NgOptimizedImage,
-    MatDatepickerModule
+    MatDatepickerModule,
 
 
   ],
