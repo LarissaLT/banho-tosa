@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 
 
-export interface RouteInfo {
+export interface RouteAdminInfo {
   path: string;
   title: string;
   icon: string;
   class: string;
 }
 
-export const ROUTES: RouteInfo[] = [
+export const ROUTES_ADMIN: RouteAdminInfo[] = [
   // {path: '/dashboard', title: 'Dashboard', icon: 'nc-bank', class: ''},
   // { path: '/atos',          title: 'Atos Teste',        icon:'nc-air-baloon', class: '' },
-  {path: '/icons', title: 'Icones', icon: 'nc-diamond', class: ''},
+  // {path: '/icons', title: 'Icones', icon: 'nc-diamond', class: ''},
   // { path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
   // {path: '/notifications', title: 'Notifications', icon: 'nc-bell-55', class: ''},
   // { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
@@ -22,22 +22,19 @@ export const ROUTES: RouteInfo[] = [
   {path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''},
   {path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''},
   {path: '/funcionario-listar', title: 'Funcionários', icon: 'nc-single-02', class: ''},
-  {path: '/servico-listar', title: 'Serviços', icon: 'nc-shop', class: ''},
-  {path: '/home', title: 'Home', icon: 'nc-single-02', class: ''},
-  {path: '/login', title: 'Login', icon: 'nc-single-02', class: ''},
-  {path: '/cadastrar', title: 'Cadastro', icon: 'nc-single-02', class: ''},
+  {path: '/servico-listar', title: 'Serviços', icon: 'nc-single-02', class: ''},
 ];
 
 @Component({
   moduleId: module.id,
   selector: 'sidebar-cmp',
-  templateUrl: 'sidebar.component.html',
+  templateUrl: 'sidebar.admin.component.html',
 })
 
-export class SidebarComponent implements OnInit {
+export class SidebarAdminComponent implements OnInit {
   public menuItems: any[];
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItems = ROUTES_ADMIN.filter(menuItem => menuItem);
   }
 }

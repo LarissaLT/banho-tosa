@@ -6,21 +6,20 @@ import {SobreComponent} from './pages/usuario/sobre/sobre.component';
 import {FuncionamentoComponent} from './pages/usuario/funcionamento/funcionamento.component';
 import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
-import {AppComponent} from './app.component';
-import {AgendamentoComponent} from './pages/agendamento/agendamento.component';
 import {AuthGuard} from './service/AuthGuard';
 
 
 export const AppRoutes: Routes = [
-  { path: 'home',                component: HomeComponent },
-  { path: 'sobre',               component: SobreComponent },
-  { path: 'funcionamento',       component: FuncionamentoComponent },
-  { path: 'login',               component: LoginComponent },
-  { path: 'cadastro',            component: CadastroComponent },
+  { path: 'home',                component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'sobre',               component: SobreComponent, canActivate: [AuthGuard] },
+  { path: 'funcionamento',       component: FuncionamentoComponent, canActivate: [AuthGuard] },
+  { path: 'login',               component: LoginComponent, canActivate: [AuthGuard] },
+  { path: 'cadastro',            component: CadastroComponent, canActivate: [AuthGuard] },
+  { path: 'funcionamento/:id',       component: FuncionamentoComponent, canActivate: [AuthGuard] },
 
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'home',
     pathMatch: 'full',
   }, {
     path: '',

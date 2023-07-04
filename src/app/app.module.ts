@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
-import { SidebarModule } from './sidebar/sidebar.module';
+import { SidebarModule } from './sidebar/ADMIN/sidebar.admin.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
@@ -36,7 +36,8 @@ import {AuthGuard} from './service/AuthGuard';
     SobreComponent,
     FuncionamentoComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    FuncionamentoComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -54,6 +55,7 @@ import {AuthGuard} from './service/AuthGuard';
     HttpClientModule,
     NgOptimizedImage,
     MatDatepickerModule,
+    [RouterModule]
 
 
   ],

@@ -19,24 +19,21 @@ import { ListaCachorroComponent } from 'app/pages/cachorro-listar/cachorro-lista
 import { ListaFuncionarioComponent } from 'app/pages/funcionario-listar/funcionario-listar.component';
 import { ListaServicoComponent } from 'app/pages/servico-listar/servico-listar.component';
 
-
-
-
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',                component: DashboardComponent },
-    { path: 'user',                     component: UserComponent },
+    // { path: 'dashboard',                component: DashboardComponent },
+    // { path: 'user',                     component: UserComponent },
+    // { path: 'table',                    component: TableComponent },
+    // { path: 'typography',               component: TypographyComponent },
+    // { path: 'icons',                    component: IconsComponent },
+    // { path: 'atos',                     component: IconsComponent },
+    // { path: 'maps',                     component: MapsComponent },
+    // { path: 'notifications',            component: NotificationsComponent },
+    // { path: 'upgrade',                  component: UpgradeComponent },
     { path: 'cachorro',                 component: CachorroComponent },
     { path: 'servico',                  component: ServicoComponent },
     { path: 'funcionario',              component: FuncionarioComponent },
     { path: 'tutor',                    component: TutorComponent },
     { path: 'agendamento',              component: AgendamentoComponent },
-    { path: 'table',                    component: TableComponent },
-    { path: 'typography',               component: TypographyComponent },
-    { path: 'icons',                    component: IconsComponent },
-    { path: 'atos',                     component: IconsComponent },
-    { path: 'maps',                     component: MapsComponent },
-    { path: 'notifications',            component: NotificationsComponent },
-    { path: 'upgrade',                  component: UpgradeComponent },
     { path: 'tutor-listar',             component: ListaTutorComponent },
     { path: 'agendamento-listar',       component: ListaAgendamentoComponent },
     { path: 'cachorro-listar',          component: ListaCachorroComponent },

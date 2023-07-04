@@ -13,8 +13,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/home">Home</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="../sobre/sobre.component.html">Sobre</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="../funcionamento/funcionamento.component.html">Funcionamento</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/funcionamento">Sobre</a></li>
+        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/funcionamento">Funcionamento</a></li>
         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/login">Login</a></li>
       </ul>
     </div>
@@ -31,12 +31,12 @@
             <h4 class="font-weight-bolder signin-texto">Registre-se</h4>
             <p class="mb-0">Preencha e se cadastre!</p>
           </div>
-          <form>
+          <form #cadastroForm="ngForm" (ngSubmit)="cadastrarTutor(cadastroForm)">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Nome Completo</label>
-                  <input type="text" class="form-control" name="nome" >
+                  <input type="text" class="form-control" name="nome" [(ngModel)]="signup.nome" #name="ngModel">
                 </div>
               </div>
             </div>
@@ -44,7 +44,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>E-mail</label>
-                  <input type="text" class="form-control" name="email" >
+                  <input type="text" class="form-control" name="email" [(ngModel)]="signup.email" #name="ngModel">
                 </div>
               </div>
             </div>
@@ -52,8 +52,8 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Senha</label>
-                  <input type="text" class="form-control" name="senha"  #name="ngModel"
-                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"><br>
+                  <input type="text" class="form-control" name="senha" #name="ngModel"
+                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="signup.senha"><br>
                   <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
                   <label for="showPasswordCheckbox">Mostrar senha</label>
                 </div>

@@ -8,7 +8,6 @@ export interface Signin {
 }
 
 export interface Signup{
-  id: string,
   nome: string,
   email: string,
   senha: string,

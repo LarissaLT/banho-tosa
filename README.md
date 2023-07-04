@@ -135,8 +135,8 @@ paper-dashboard-angular
 │   │   │       └── navbar.module.ts
 │   │   └── sidebar
 │   │       ├── sidebar.component.html
-│   │       ├── sidebar.component.ts
-│   │       └── sidebar.module.ts
+│   │       ├── sidebar.admin.component.ts
+│   │       └── sidebar.admin.module.ts
 │   ├── assets
 │   │   ├── css
 │   │   ├── fonts
