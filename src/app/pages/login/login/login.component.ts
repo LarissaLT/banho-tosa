@@ -37,11 +37,11 @@ export class LoginComponent {
           // Acessa a informação do papel (role) do usuário
           const userRole = decodedToken.role;
 
-          if (userRole === 'USER') {
-            this.router.navigate(['rota-para-usuarios-comuns']);
-          } else if (userRole === 'ADMIN') {
-            this.router.navigate(['rota-para-administradores']);
-          }
+          // if (userRole === 'USER') {
+          //   this.router.navigate(['rota-para-usuarios-comuns']);
+          // } else if (userRole === 'ADMIN') {
+          //   this.router.navigate(['rota-para-administradores']);
+          // }
         },
         error: err => {
           console.log(err);

@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
-import { SidebarModule } from './sidebar/ADMIN/sidebar.admin.module';
 import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule} from './shared/navbar/navbar.module';
 import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 
 import { AppComponent } from './app.component';
@@ -24,9 +22,8 @@ import {NgOptimizedImage} from '@angular/common';
 import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {AuthGuard} from './service/AuthGuard';
-
-
+import {NavbarModule} from './shared/navbar/navbar.module';
+import {SidebarModule} from './sidebar/sidebar.module';
 
 @NgModule({
   declarations: [

@@ -15,7 +15,7 @@ export const AppRoutes: Routes = [
   { path: 'funcionamento',       component: FuncionamentoComponent, canActivate: [AuthGuard] },
   { path: 'login',               component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'cadastro',            component: CadastroComponent, canActivate: [AuthGuard] },
-  { path: 'funcionamento/:id',       component: FuncionamentoComponent, canActivate: [AuthGuard] },
+  { path: 'funcionamento',       component: FuncionamentoComponent, canActivate: [AuthGuard] },
 
   {
     path: '',

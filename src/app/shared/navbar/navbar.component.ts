@@ -1,8 +1,7 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location} from '@angular/common';
-import {ROUTES_ADMIN} from '../../sidebar/ADMIN/sidebar.admin.component';
-import {ROUTES_USER} from '../../sidebar/USER/sidebar.user.component';
+import { ROUTES } from '../../sidebar/sidebar.component';
 
 @Component({
     moduleId: module.id,
@@ -27,8 +26,7 @@ export class NavbarComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.listTitles = ROUTES_ADMIN.filter(listTitle => listTitle);
-        this.listTitles = ROUTES_USER.filter(listTitle => listTitle);
+        this.listTitles = ROUTES.filter(listTitle => listTitle);
         var navbar : HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
         this.router.events.subscribe((event) => {
