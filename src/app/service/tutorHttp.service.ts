@@ -6,11 +6,17 @@ import { Cachorro } from './cachorroHttp.service';
 export interface Tutor{
   id: number,
   nome: string,
+  role: string,
   celular: number,
   email: string,
   senha: string,
   endereco: string,
   cachorros: Cachorro[]
+}
+
+export enum Role {
+  USER = "USER",
+  ADMIN = "ADMIN"
 }
 
 @Injectable({

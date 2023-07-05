@@ -91,10 +91,10 @@ paper-dashboard-angular
 │   │   │   └── admin-layout
 │   │   │       ├── admin-layout.component.html
 │   │   │       ├── admin-layout.component.scss
-│   │   │       ├── admin-layout.component.spec.ts
-│   │   │       ├── admin-layout.component.ts
-│   │   │       ├── admin-layout.module.ts
-│   │   │       └── admin-layout.routing.ts
+│   │   │       ├── user-layout.component.spec.ts
+│   │   │       ├── user-layout.component.ts
+│   │   │       ├── user-layout.module.ts
+│   │   │       └── user-layout.routing.ts
 │   │   ├── pages
 │   │   │   ├── dashboard
 │   │   │   │   ├── dashboard.component.html

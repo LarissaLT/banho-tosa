@@ -43,5 +43,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'cachorro/:id',             component: CachorroComponent },
     { path: 'servico/:id',              component: ServicoComponent },
     { path: 'tutor/:id',                component: TutorComponent },
-    { path: 'agendamento/:id',          component: AgendamentoComponent },
+    { path: 'tutor-listar/:id',         component: TutorComponent },
+    { path: 'agendamento-listar/:id',   component: AgendamentoComponent },
+    { path: 'cachorro-listar/:id',      component: CachorroComponent },
+    { path: 'funcionario-listar/:id',   component: FuncionarioComponent },
+    { path: 'servico-listar/:id',       component: ServicoComponent },
+
 ];

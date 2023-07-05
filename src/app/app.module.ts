@@ -1,14 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import {ActivatedRoute, RouterModule} from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
 import { FooterModule } from './shared/footer/footer.module';
 import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 
 import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
@@ -24,6 +23,7 @@ import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {NavbarModule} from './shared/navbar/navbar.module';
 import {SidebarModule} from './sidebar/sidebar.module';
+import {AppRoutesAdmin} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -34,12 +34,12 @@ import {SidebarModule} from './sidebar/sidebar.module';
     FuncionamentoComponent,
     LoginComponent,
     CadastroComponent,
-    FuncionamentoComponent
+    FuncionamentoComponent,
   ],
   imports: [
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(AppRoutes, {
+    RouterModule.forRoot(AppRoutesAdmin, {
       useHash: true
     }),
     SidebarModule,
@@ -52,7 +52,8 @@ import {SidebarModule} from './sidebar/sidebar.module';
     HttpClientModule,
     NgOptimizedImage,
     MatDatepickerModule,
-    [RouterModule]
+    [RouterModule],
+
 
 
   ],

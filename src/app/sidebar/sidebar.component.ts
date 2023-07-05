@@ -17,9 +17,9 @@ export const ROUTES: RouteInfo[] = [
   // {path: '/table', title: 'Table List', icon: 'nc-tile-56', class: ''},
   // {path: '/typography', title: 'Typography', icon: 'nc-caps-small', class: ''},
   // {path: '/upgrade', title: 'Upgrade to PRO', icon: 'nc-spaceship', class: 'active-pro'},
-  {path: '/tutor', title: 'Tutores', icon: 'nc-single-02', class: ''},
-  {path: '/agendamento', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''},
-  {path: '/cachorro', title: 'Cachorros', icon: 'nc-single-02', class: ''},
+  {path: '/tutor-listar', title: 'Tutores', icon: 'nc-single-02', class: ''},
+  {path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''},
+  {path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''},
 ];
 
 @Component({

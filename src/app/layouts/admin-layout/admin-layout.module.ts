@@ -28,8 +28,6 @@ import {ListaAgendamentoComponent} from '../../pages/agendamento-listar/agendame
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
-
-
 @NgModule({
   imports: [
     CommonModule,

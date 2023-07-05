@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tutor, TutorHttpService } from 'app/service/tutorHttp.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import {AuthTokenService} from '../../service/authToken.service';
 
 @Component({
     selector: 'tutor-cmp',
@@ -14,11 +15,11 @@ export class TutorComponent implements OnInit{
   tutor: Tutor = {} as Tutor;
 
   constructor(
-    private tutorService: TutorHttpService, private router: Router, private route: ActivatedRoute) { }
+    private tutorService: TutorHttpService, private router: Router, private route: ActivatedRoute,private tokenService:AuthTokenService) { }
 
   ngOnInit() {
     const idTutor = this.route.snapshot.params['id'];
-
+console.log(this.tokenService.isUserAdmin)
       console.log(idTutor)
 
       if (idTutor) {
