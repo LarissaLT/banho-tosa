@@ -1,15 +1,14 @@
 <div class="sidebar-wrapper">
   <div class="logo">
     <div class="simple-text logo-normal">
-      Olá, <span *ngFor="let tutor of tutoresTableData">{{ tutor.nome }}
-    </span>
+      <p> Olá, </p>
     </div>
   </div>
     <ul class="nav">
         <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
-            <a [routerLink]="[menuItem.path]">
-                <i class="nc-icon {{menuItem.icon}}"></i>
-                <p>{{menuItem.title}}</p> <!--título dos itens do menu lateral-->
+            <a class="bg-white" [routerLink]="[menuItem.path]">
+                <i class="nc-icon text-black {{menuItem.icon}}"></i>
+                <p class="text-black">{{menuItem.title}}</p> <!--título dos itens do menu lateral-->
             </a>
         </li>
     </ul>

@@ -2,15 +2,33 @@
   <div class="col-md-12">
     <div class="card card-user">
       <div class="card-header">
-        <h5 class="card-title">Dados</h5>
+        <h5 class="card-title">Dados do Tutor</h5>
       </div>
       <div class="card-body">
         <form #tutorForm="ngForm" (ngSubmit)="salvarOuAtualizar(tutorForm)">
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
               <div class="form-group">
-                <label>Nome Completo</label>
-                <input type="text" class="form-control" name="nome" [(ngModel)]="tutor.nome" #name="ngModel">
+                <label>Nome Completo <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]="tutor.nome" #name="ngModel"
+                       required minlength="5" pattern="[a-zA-Z ]*">
+                <div class="text-danger" *ngIf="tutorForm.controls['nome'].invalid && (tutorForm.controls['nome'].dirty || tutorForm.controls['nome'].touched)">
+                  <div *ngIf="tutorForm.controls['nome'].errors.required">Campo obrigatório</div>
+                  <div *ngIf="tutorForm.controls['nome'].errors.minlength">O nome deve ter pelo menos 5 caracteres</div>
+                  <div *ngIf="tutorForm.controls['nome'].errors.pattern">O campo deve conter apenas letras</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Role <span class="text-danger">*</span></label>
+                <select type="text" class="form-control" name="role" [(ngModel)]="tutor.role" #name="ngModel"
+                        required>
+                <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+                </select>
+                <div *ngIf="tutorForm.controls['role'].invalid && (tutorForm.controls['role'].dirty || tutorForm.controls['role'].touched)">
+                  <div *ngIf="tutorForm.controls['role'].errors.required" class="text-danger">Campo obrigatório</div>
+                </div>
               </div>
             </div>
           </div>
@@ -18,13 +36,18 @@
             <div class="col-md-4 pr-1">
               <div class="form-group">
                 <label>Celular</label>
-                <input type="number" class="form-control" name="celular" [(ngModel)]="tutor.celular" #name="ngModel">
+                <input type="text" class="form-control" placeholder="(xx) xxxxx-xxxx" name="celular" [(ngModel)]="tutor.celular" #name="ngModel">
               </div>
             </div>
             <div class="col-md-8 pl-1">
               <div class="form-group">
-                <label>E-mail</label>
-                <input type="text" class="form-control" name="email" [(ngModel)]="tutor.email" #name="ngModel">
+                <label>E-mail <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="tutor.email" #name="ngModel"
+                       required email>
+                <div class="text-danger" *ngIf="tutorForm.controls['email'].invalid && (tutorForm.controls['email'].dirty || tutorForm.controls['email'].touched)">
+                  <div *ngIf="tutorForm.controls['email'].errors.required">Campo obrigatório</div>
+                  <div *ngIf="tutorForm.controls['email'].errors.email">E-mail inválido</div>
+                </div>
               </div>
             </div>
           </div>
@@ -38,7 +61,7 @@
           </div>
           <div class="row">
             <div class="update ml-auto mr-auto">
-              <button type="submit" class="btn btn-warning btn-round">Salvar</button>
+              <button type="submit" class="btn btn-warning btn-round" [disabled]="tutorForm.invalid">Salvar</button>
             </div>
           </div>
         </form>

@@ -2,21 +2,27 @@
   <div class="col-md-12">
     <div class="card card-user">
       <div class="card-header">
-        <h5 class="card-title">Dados</h5>
+        <h5 class="card-title">Dados do Funcionário</h5>
       </div>
       <div class="card-body">
         <form #funcionarioForm="ngForm" (ngSubmit)="salvarOuAtualizar(funcionarioForm)">
           <div class="row">
             <div class="col-md-7">
               <div class="form-group">
-                <label>Nome</label>
-                <input type="text" class="form-control" name="nome" [(ngModel)]="funcionario.nome" #name="ngModel">
+                <label>Nome Completo <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]="funcionario.nome" #name="ngModel"
+                       required minlength="5" pattern="[a-zA-Z ]*">
+                <div class="text-danger" *ngIf="funcionarioForm.controls['nome'].invalid && (funcionarioForm.controls['nome'].dirty || funcionarioForm.controls['nome'].touched)">
+                  <div *ngIf="funcionarioForm.controls['nome'].errors.required">Campo obrigatório</div>
+                  <div *ngIf="funcionarioForm.controls['nome'].errors.minlength">O nome deve ter pelo menos 5 caracteres</div>
+                  <div *ngIf="funcionarioForm.controls['nome'].errors.pattern">O campo deve conter apenas letras</div>
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="update ml-auto mr-auto">
-              <button type="submit" class="btn btn-warning btn-round">Salvar</button>
+              <button type="submit" class="btn btn-warning btn-round" [disabled]="funcionarioForm.invalid">Salvar</button>
             </div>
           </div>
         </form>

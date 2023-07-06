@@ -5,7 +5,6 @@ import {Agendamento, AgendamentoHttpService, DadosFormAgendamento} from 'app/ser
 import flatpickr from 'flatpickr';
 import {AuthTokenService} from '../../service/authToken.service';
 
-
 @Component({
   selector: 'agendamento-cmp',
   moduleId: module.id,
@@ -14,13 +13,12 @@ import {AuthTokenService} from '../../service/authToken.service';
 
 export class AgendamentoComponent implements OnInit,AfterViewInit {
   agendamento: Agendamento = {} as Agendamento;
-  dadosFormAgendamento: DadosFormAgendamento = {} as DadosFormAgendamento
-
+  dadosFormAgendamento: DadosFormAgendamento = {} as DadosFormAgendamento;
   erro: string;
-  date: Date
+  date: Date;
 
   constructor(
-    private agendamentoService: AgendamentoHttpService, private router: Router, private route: ActivatedRoute, public authTokenService: AuthTokenService ) {
+    private agendamentoService: AgendamentoHttpService, private router: Router, private route: ActivatedRoute, public authTokenService: AuthTokenService) {
   }
 
   ngOnInit() {

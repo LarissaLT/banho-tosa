@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthTokenService} from '../service/authToken.service';
 import {Tutor, TutorHttpService} from '../service/tutorHttp.service';
+import {Observable, switchMap} from 'rxjs';
 
 export interface RouteInfo {
   path: string;
@@ -30,7 +31,7 @@ export let ROUTES: RouteInfo[] = [
 
 export class SidebarComponent implements OnInit {
   public menuItems: any[];
-  public tutoresTableData: Tutor[];
+  public tutor: Tutor;
 
   constructor(private authTokenService: AuthTokenService, private tutorService: TutorHttpService) {
   }
@@ -38,6 +39,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.initRoutes();
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+
   }
 
   initRoutes() {
@@ -58,11 +60,8 @@ export class SidebarComponent implements OnInit {
 
   addAdminOnlyRoutes(): void {
     if (this.authTokenService.isUserAdmin()) {
-      ROUTES.push({path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-single-02', class: ''})
-      ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
       ROUTES.push({path: '/funcionario-listar', title: 'Funcionários', icon: 'nc-single-02', class: ''})
       ROUTES.push({path: '/servico-listar', title: 'Serviços', icon: 'nc-single-02', class: ''})
-      ROUTES.push({path: '/tutor-listar', title: 'Tutores', icon: 'nc-single-02', class: ''})
     }
   }
 

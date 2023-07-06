@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cachorro, CachorroHttpService } from 'app/service/cachorroHttp.service';
+import {Router} from '@angular/router';
+import {AuthTokenService} from '../../service/authToken.service';
 
 @Component({
     selector: 'cachorro-listar-cmp',
@@ -9,7 +11,7 @@ import { Cachorro, CachorroHttpService } from 'app/service/cachorroHttp.service'
 
 export class ListaCachorroComponent implements OnInit{
 
-  constructor(private cachorroService: CachorroHttpService){}
+  constructor(private cachorroService: CachorroHttpService, public authTokenService: AuthTokenService, private router: Router){}
 
   public cachorrosTableData: Cachorro[];
   erro: string
@@ -18,6 +20,10 @@ export class ListaCachorroComponent implements OnInit{
         this.listarCachorro()
   };
 
+  cadastrarCachorro() {
+      this.router.navigate(['/cachorro']);
+  }
+
   listarCachorro(){
     //loadin
         this.cachorroService.listar().subscribe(
@@ -25,7 +31,7 @@ export class ListaCachorroComponent implements OnInit{
             next: (response:Cachorro[]) => {this.cachorrosTableData=response},
             error: (err: any) => {
               console.log('ERROR: '+err)
-              alert("deu merda")
+              alert("ERRO")
               this.erro=err
             },
             complete:function() { console.log('Completed'); }

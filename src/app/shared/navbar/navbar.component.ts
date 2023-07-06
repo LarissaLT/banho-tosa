@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/co
 import { Router } from '@angular/router';
 import { Location} from '@angular/common';
 import { ROUTES } from '../../sidebar/sidebar.component';
+import {Tutor, TutorHttpService} from '../../service/tutorHttp.service';
 
 @Component({
     moduleId: module.id,
@@ -33,6 +34,7 @@ export class NavbarComponent implements OnInit{
           this.sidebarClose();
        });
     }
+
     getTitle(){
       var titlee = this.location.prepareExternalUrl(this.location.path());
       if(titlee.charAt(0) === '#'){

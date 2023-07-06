@@ -26,7 +26,7 @@ export class ListaTutorComponent implements OnInit{
             next: (response:Tutor[]) => {this.tutoresTableData=response},
             error: (err: any) => {
               console.log('ERROR: '+err)
-              alert("deu merda")
+              alert("ERRO")
               this.erro=err
             },
             complete:function() { console.log('Completed'); }

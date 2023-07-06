@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Agendamento, AgendamentoHttpService} from '../../service/agendamentoHttp.service';
 import {AuthTokenService} from '../../service/authToken.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'agendamento-listar-cmp',
@@ -9,7 +10,7 @@ import {AuthTokenService} from '../../service/authToken.service';
 })
 export class ListaAgendamentoComponent implements OnInit{
 
-  constructor(private agendamentoService: AgendamentoHttpService, public authTokenService: AuthTokenService){}
+  constructor(private agendamentoService: AgendamentoHttpService, public authTokenService: AuthTokenService, private router: Router){}
 
   public agendamentosTableData: Agendamento[];
   erro: string
@@ -17,6 +18,10 @@ export class ListaAgendamentoComponent implements OnInit{
     ngOnInit(){
         this.listarAgendamento()
   };
+
+  cadastrarAgendamento() {
+      this.router.navigate(['/agendamento']);
+  }
 
   listarAgendamento(){
     //loadin

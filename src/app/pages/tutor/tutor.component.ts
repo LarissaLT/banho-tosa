@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tutor, TutorHttpService } from 'app/service/tutorHttp.service';
+import {Role, Tutor, TutorHttpService} from 'app/service/tutorHttp.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {AuthTokenService} from '../../service/authToken.service';
 
 @Component({
@@ -13,9 +13,12 @@ import {AuthTokenService} from '../../service/authToken.service';
 export class TutorComponent implements OnInit{
   erro: string;
   tutor: Tutor = {} as Tutor;
+  roles: string[] = Object.values(Role);
+  tutorForm: FormGroup;
 
   constructor(
-    private tutorService: TutorHttpService, private router: Router, private route: ActivatedRoute,private tokenService:AuthTokenService) { }
+    private tutorService: TutorHttpService, private router: Router, private route: ActivatedRoute,
+    private tokenService:AuthTokenService, private formBuilder: FormBuilder){ }
 
   ngOnInit() {
     const idTutor = this.route.snapshot.params['id'];
@@ -25,6 +28,19 @@ console.log(this.tokenService.isUserAdmin)
       if (idTutor) {
          this.buscarTutor(idTutor);
       }
+  }
+
+  initForm() {
+    this.tutorForm = this.formBuilder.group({
+      celular: [
+        this.tutor.celular,
+        [Validators.pattern('^\\([0-9]{2}\\)\\s[0-9]{5}-[0-9]{4}$')],
+      ]
+    });
+  }
+
+  get getControls() {
+    return this.tutorForm.controls;
   }
 
   salvarTutor(tutor: Tutor) {

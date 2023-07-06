@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="card card-user">
       <div class="card-header">
-        <h5 class="card-title">Agendamento</h5>
+        <h5 class="card-title">Dados do Agendamento</h5>
       </div>
       <div class="card-body">
         <form #agendamentoForm="ngForm" (ngSubmit)="salvarOuAtualizar(agendamentoForm)">
@@ -11,27 +11,38 @@
               <div class="form-group">
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
                 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-                <label>Data</label>
-                <input type="text"  id="datepicker"  class="form-control"  name="data" [(ngModel)]="agendamento.data" #name="ngModel"
-                style="background-color: white">
+                <label>Data <span class="text-danger">*</span></label>
+                <input type="text" id="datepicker" class="form-control" name="data" [(ngModel)]="agendamento.data" #data="ngModel"
+                       required style="background-color: white">
+                <div *ngIf="data.errors && (data.dirty || data.touched)" class="text-danger">
+                  <div *ngIf="data.errors.required">Este campo é obrigatório.</div>
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Serviço</label>
-                <select class="form-control" name="servico" [(ngModel)]="agendamento.servico" #name="ngModel">
-                  <option *ngFor="let servico of dadosFormAgendamento.servicos" [ngValue]="servico" >{{ servico.nome }}</option>
+                <label>Serviço <span class="text-danger">*</span></label>
+                <select class="form-control" name="servico" [(ngModel)]="agendamento.servico" #servico="ngModel"
+                        required>
+                  <option *ngFor="let servico of dadosFormAgendamento.servicos" [ngValue]="servico">{{ servico.nome }}</option>
                 </select>
+                <div *ngIf="servico.errors && (servico.dirty || servico.touched)" class="text-danger">
+                  <div *ngIf="servico.errors.required">Este campo é obrigatório.</div>
+                </div>
               </div>
             </div>
             <div class="col-md-6" *ngIf="this.authTokenService.isUserAdmin()">
               <div class="form-group">
-                <label>Tutor</label>
-                <select class="form-control" name="tutor" [(ngModel)]="agendamento.tutor" #name="ngModel">
+                <label>Tutor <span class="text-danger">*</span></label>
+                <select class="form-control" name="tutor" [(ngModel)]="agendamento.tutor" #tutor="ngModel"
+                        required>
                   <option *ngFor="let tutor of dadosFormAgendamento.tutores" [ngValue]="tutor">{{ tutor.nome }}</option>
                 </select>
+                <div *ngIf="tutor.errors && (tutor.dirty || tutor.touched)" class="text-danger">
+                  <div *ngIf="tutor.errors.required">Este campo é obrigatório.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -46,16 +57,20 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Cachorro</label>
-                <select class="form-control" name="cachorro" [(ngModel)]="agendamento.cachorro" #name="ngModel">
+                <label>Cachorro <span class="text-danger">*</span></label>
+                <select class="form-control" name="cachorro" [(ngModel)]="agendamento.cachorro" #cachorro="ngModel"
+                        required>
                   <option *ngFor="let cachorro of dadosFormAgendamento.cachorros" [ngValue]="cachorro">{{ cachorro.nome }}</option>
                 </select>
+                <div *ngIf="cachorro.errors && (cachorro.dirty || cachorro.touched)" class="text-danger">
+                  <div *ngIf="cachorro.errors.required">Este campo é obrigatório.</div>
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="update ml-auto mr-auto">
-              <button type="submit" class="btn btn-warning btn-round">Salvar</button>
+              <button type="submit" class="btn btn-warning btn-round" [disabled]="agendamentoForm.invalid">Salvar</button>
             </div>
           </div>
         </form>

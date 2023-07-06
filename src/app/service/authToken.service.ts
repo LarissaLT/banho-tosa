@@ -27,6 +27,7 @@ export class AuthTokenService {
     return this.decodePayloadJWT()['jti']
   }
 
+
   public isUserAdmin(){
     return this.getUserRole()===Role.ADMIN
   }

@@ -22,6 +22,7 @@
               <th>Name</th>
               <th>Celular</th>
               <th>E-mail</th>
+              <th>Role</th>
               <th></th>
             </thead>
             <tbody >
@@ -29,6 +30,7 @@
                 <td>{{tutor.nome}}</td>
                 <td>{{tutor.celular}}</td>
                 <td>{{tutor.email}}</td>
+                <td>{{tutor.role}}</td>
                 <td class="text-right">
                   <a [routerLink]="['/tutor', tutor.id]">
                     <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">

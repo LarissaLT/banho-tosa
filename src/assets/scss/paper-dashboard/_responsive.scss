@@ -355,7 +355,6 @@
       .sidebar-wrapper{
         background-color: #e6a756e6;
         li.active{
-          background-color: #f4f3ef;
           > a:not([data-toggle="collapse"]),
           > [data-toggle="collapse"] + div .nav li {
             &:before{
@@ -372,7 +371,7 @@
             }
 
             &:after{
-              border-right: 17px solid #e6a756e6;
+              border-right: 17px solid #f4f3ef;
               border-top: 17px solid transparent;
               border-bottom: 17px solid transparent;
               content: "";

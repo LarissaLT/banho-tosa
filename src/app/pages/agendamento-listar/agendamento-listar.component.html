@@ -6,11 +6,9 @@
             <h4 class="card-title">Lista de Agendamentos</h4>
           </div>
           <div class="col-4 text-right">
-            <a [routerLink]="['/agendamento']">
-              <button class="btn btn-outline-warning btn-round">
-                <i class="fa fa-plus"></i> Cadastrar
-              </button>
-           </a>
+            <button class="btn btn-outline-warning btn-round" (click)="cadastrarAgendamento()">
+              <i class="fa fa-plus"></i> Cadastrar
+            </button>
           </div>
         </div>
       </div>
@@ -38,9 +36,6 @@
                       <i class="fa fa-pencil"></i>
                     </button>
                   </a>
-                  <button class="btn btn-danger btn-icon btn-round btn-sm" (click)="deletarAgendamento(agendamento.id)" title="Excluir">
-                    <i class="fa fa-trash"></i>
-                  </button>
                 </td>
             </tr>
             </tbody>

@@ -8785,7 +8785,7 @@ img {
   .off-canvas-sidebar[data-color="white"] .nav li a[data-toggle="collapse"] ~ div > ul > li .sidebar-mini-icon,
   .off-canvas-sidebar[data-color="white"] .nav li a[data-toggle="collapse"] ~ div > ul > li > a {
     color: #66615B;
-    opacity: .7; }
+    opacity: 0.7; }
   .sidebar[data-color="white"] .nav li:hover:not(.active) > a,
   .sidebar[data-color="white"] .nav li:focus:not(.active) > a,
   .off-canvas-sidebar[data-color="white"] .nav li:hover:not(.active) > a,
