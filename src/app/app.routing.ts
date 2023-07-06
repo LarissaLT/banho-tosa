@@ -8,12 +8,14 @@ import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
 import {AuthGuard} from './service/AuthGuard';
 import {AgendamentoComponent} from './pages/agendamento/agendamento.component';
+import {ServicosOferecidosComponent} from './pages/usuario/servicos/servicos-oferecidos.component';
 
 
 export const AppRoutesAdmin: Routes = [
   { path: 'home',                component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'sobre',               component: SobreComponent, canActivate: [AuthGuard] },
   { path: 'funcionamento',       component: FuncionamentoComponent, canActivate: [AuthGuard] },
+  { path: 'servicos-oferecidos', component: ServicosOferecidosComponent, canActivate: [AuthGuard] },
   { path: 'login',               component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'cadastro',            component: CadastroComponent, canActivate: [AuthGuard] },
   { path: 'agendamento/:id',     component: AgendamentoComponent, canActivate: [AuthGuard] },

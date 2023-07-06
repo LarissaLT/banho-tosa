@@ -24,6 +24,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {NavbarModule} from './shared/navbar/navbar.module';
 import {SidebarModule} from './sidebar/sidebar.module';
 import {AppRoutesAdmin} from './app.routing';
+import {ServicosOferecidosComponent} from './pages/usuario/servicos/servicos-oferecidos.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {AppRoutesAdmin} from './app.routing';
     HomeComponent,
     SobreComponent,
     FuncionamentoComponent,
+    ServicosOferecidosComponent,
     LoginComponent,
     CadastroComponent,
     FuncionamentoComponent,
