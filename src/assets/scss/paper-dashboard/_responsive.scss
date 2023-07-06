@@ -353,7 +353,9 @@
 
     .sidebar{
       .sidebar-wrapper{
+        background-color: #e79232;
         li.active{
+          background-color: #FFFFFF;
           > a:not([data-toggle="collapse"]),
           > [data-toggle="collapse"] + div .nav li {
             &:before{

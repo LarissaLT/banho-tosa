@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {Agendamento, AgendamentoHttpService, DadosFormAgendamento} from 'app/service/agendamentoHttp.service';
 import flatpickr from 'flatpickr';
+import {AuthTokenService} from '../../service/authToken.service';
 
 
 @Component({
@@ -19,11 +20,12 @@ export class AgendamentoComponent implements OnInit,AfterViewInit {
   date: Date
 
   constructor(
-    private agendamentoService: AgendamentoHttpService, private router: Router, private route: ActivatedRoute) {
+    private agendamentoService: AgendamentoHttpService, private router: Router, private route: ActivatedRoute, public authTokenService: AuthTokenService ) {
   }
 
   ngOnInit() {
     this.buscarDadosForm()
+    console.log(this.authTokenService.getUserId())
 
     const idAgendamento = this.route.snapshot.params['id'];
 

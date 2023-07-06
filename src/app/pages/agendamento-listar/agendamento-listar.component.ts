@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Agendamento, AgendamentoHttpService} from '../../service/agendamentoHttp.service';
+import {AuthTokenService} from '../../service/authToken.service';
 
 @Component({
     selector: 'agendamento-listar-cmp',
@@ -8,7 +9,7 @@ import {Agendamento, AgendamentoHttpService} from '../../service/agendamentoHttp
 })
 export class ListaAgendamentoComponent implements OnInit{
 
-  constructor(private agendamentoService: AgendamentoHttpService){}
+  constructor(private agendamentoService: AgendamentoHttpService, public authTokenService: AuthTokenService){}
 
   public agendamentosTableData: Agendamento[];
   erro: string

@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthTokenService} from '../service/authToken.service';
+import {Tutor, TutorHttpService} from '../service/tutorHttp.service';
 
 export interface RouteInfo {
   path: string;
@@ -7,7 +9,7 @@ export interface RouteInfo {
   class: string;
 }
 
-export const ROUTES: RouteInfo[] = [
+export let ROUTES: RouteInfo[] = [
   // {path: '/dashboard', title: 'Dashboard', icon: 'nc-bank', class: ''},
   // { path: '/atos',          title: 'Atos Teste',        icon:'nc-air-baloon', class: '' },
   // {path: '/icons', title: 'Icones', icon: 'nc-diamond', class: ''},
@@ -17,9 +19,7 @@ export const ROUTES: RouteInfo[] = [
   // {path: '/table', title: 'Table List', icon: 'nc-tile-56', class: ''},
   // {path: '/typography', title: 'Typography', icon: 'nc-caps-small', class: ''},
   // {path: '/upgrade', title: 'Upgrade to PRO', icon: 'nc-spaceship', class: 'active-pro'},
-  {path: '/tutor-listar', title: 'Tutores', icon: 'nc-single-02', class: ''},
-  {path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''},
-  {path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''},
+
 ];
 
 @Component({
@@ -30,8 +30,49 @@ export const ROUTES: RouteInfo[] = [
 
 export class SidebarComponent implements OnInit {
   public menuItems: any[];
+  public tutoresTableData: Tutor[];
+
+  constructor(private authTokenService: AuthTokenService, private tutorService: TutorHttpService) {
+  }
 
   ngOnInit() {
+    this.initRoutes();
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+  }
+
+  initRoutes() {
+    ROUTES = []
+    this.addTutorRouteByUserRole()
+    this.addAdminOnlyRoutes()
+    this.addCommonRoutes()
+  }
+
+  addTutorRouteByUserRole(): void {
+    if (this.authTokenService.isUserAdmin()) {
+      ROUTES.push({path: '/tutor-listar', title: 'Tutores', icon: 'nc-single-02', class: ''})
+    } else {
+      let path = '/tutor/' + this.authTokenService.getUserId()
+      ROUTES.push({path: path, title: 'Perfil', icon: 'nc-single-02', class: ''})
+    }
+  }
+
+  addAdminOnlyRoutes(): void {
+    if (this.authTokenService.isUserAdmin()) {
+      ROUTES.push({path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/funcionario-listar', title: 'Funcionários', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/servico-listar', title: 'Serviços', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/tutor-listar', title: 'Tutores', icon: 'nc-single-02', class: ''})
+    }
+  }
+
+  addCommonRoutes(): void {
+    ROUTES.push({path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
+    ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
+    ROUTES.push({path: '/icons', title: 'Icones', icon: 'nc-diamond', class: ''})
+    ROUTES.push({path: '/notifications', title: 'Icones', icon: 'nc-diamond', class: ''})
+
+
+
   }
 }

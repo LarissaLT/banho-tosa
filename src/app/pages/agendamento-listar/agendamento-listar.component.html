@@ -22,7 +22,7 @@
               <th>Serviço</th>
               <th>Funcionário</th>
               <th>Cachorro</th>
-              <th>Tutor</th>
+              <th *ngIf="this.authTokenService.isUserAdmin()">Tutor</th>
               <th></th>
             </thead>
             <tbody>
@@ -31,7 +31,7 @@
                 <td>{{ agendamento.servico.nome }}</td>
                 <td>{{ agendamento.funcionario.nome }}</td>
                 <td>{{ agendamento.cachorro.nome }}</td>
-                <td>{{ agendamento.tutor.nome }}</td>
+                <td *ngIf="this.authTokenService.isUserAdmin()">{{ agendamento.tutor.nome }}</td>
                 <td class="text-right" style="margin-top: 10px;">
                   <a [routerLink]="['/agendamento', agendamento.id]">
                     <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">

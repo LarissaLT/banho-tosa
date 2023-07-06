@@ -26,7 +26,7 @@
                 </select>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" *ngIf="this.authTokenService.isUserAdmin()">
               <div class="form-group">
                 <label>Tutor</label>
                 <select class="form-control" name="tutor" [(ngModel)]="agendamento.tutor" #name="ngModel">
