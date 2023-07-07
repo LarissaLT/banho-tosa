@@ -45,8 +45,6 @@ export class SidebarComponent implements OnInit {
   initRoutes() {
     ROUTES = []
     this.addTutorRouteByUserRole()
-    // this.addAdminOnlyRoutes()
-    // this.addCommonRoutes()
   }
 
   addTutorRouteByUserRole(): void {
@@ -66,20 +64,4 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  // addAdminOnlyRoutes(): void {
-  //   if (this.authTokenService.isUserAdmin()) {
-  //     ROUTES.push({path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
-  //     ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
-  //     ROUTES.push({path: '/funcionario-listar', title: 'Funcionários', icon: 'nc-single-02', class: ''})
-  //     ROUTES.push({path: '/servico-listar', title: 'Serviços', icon: 'nc-single-02', class: ''})
-  //
-  //   }
-  // }
-  //
-  // addCommonRoutes(): void {
-  //   ROUTES.push({path: '/agendamento', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
-  //   ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
-  //   ROUTES.push({path: '/notifications', title: 'Icones', icon: 'nc-diamond', class: ''})
-  //
-  // }
 }
