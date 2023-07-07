@@ -19,11 +19,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" *ngIf="this.authTokenService.isUserAdmin()">
               <div class="form-group">
                 <label>Role <span class="text-danger">*</span></label>
                 <select type="text" class="form-control" name="role" [(ngModel)]="tutor.role" #name="ngModel"
                         required>
+                  <option value="undefined" disabled selected>Selecione</option>
                 <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
                 </select>
                 <div *ngIf="tutorForm.controls['role'].invalid && (tutorForm.controls['role'].dirty || tutorForm.controls['role'].touched)">

@@ -1,51 +1,55 @@
-import { Component, OnInit } from '@angular/core';
-import { Cachorro, CachorroHttpService } from 'app/service/cachorroHttp.service';
+import {Component, OnInit} from '@angular/core';
+import {Cachorro, CachorroHttpService} from 'app/service/cachorroHttp.service';
 import {Router} from '@angular/router';
 import {AuthTokenService} from '../../service/authToken.service';
 
 @Component({
-    selector: 'cachorro-listar-cmp',
-    moduleId: module.id,
-    templateUrl: 'cachorro-listar.component.html'
+  selector: 'cachorro-listar-cmp',
+  moduleId: module.id,
+  templateUrl: 'cachorro-listar.component.html'
 })
 
-export class ListaCachorroComponent implements OnInit{
+export class ListaCachorroComponent implements OnInit {
 
-  constructor(private cachorroService: CachorroHttpService, public authTokenService: AuthTokenService, private router: Router){}
+  constructor(private cachorroService: CachorroHttpService, private router: Router) {
+  }
 
   public cachorrosTableData: Cachorro[];
   erro: string
 
-    ngOnInit(){
-        this.listarCachorro()
+  ngOnInit() {
+    this.listarCachorro()
   };
 
   cadastrarCachorro() {
-      this.router.navigate(['/cachorro']);
+    this.router.navigate(['/cachorro']);
   }
 
-  listarCachorro(){
-    //loadin
-        this.cachorroService.listar().subscribe(
-          {
-            next: (response:Cachorro[]) => {this.cachorrosTableData=response},
-            error: (err: any) => {
-              console.log('ERROR: '+err)
-              alert("ERRO")
-              this.erro=err
-            },
-            complete:function() { console.log('Completed'); }
-          }
-         )
+  listarCachorro() {
+    this.cachorroService.listar().subscribe(
+      {
+        next: (response: Cachorro[]) => {
+          this.cachorrosTableData = response
+        },
+        error: (err: any) => {
+          console.log('ERROR: ' + err)
+          alert('ERRO')
+          this.erro = err
+        },
+        complete: function () {
+          console.log('Completed');
+        }
       }
+    )
+  }
 
   deletarCachorro(id: number) {
-    const confirmacao = confirm("Tem certeza que deseja deletar o cachorro?");
+    const confirmacao = confirm('Tem certeza que deseja deletar o cachorro?');
 
     if (confirmacao) {
       this.cachorroService.deletar(id).subscribe(
         {
-          next:() => {
+          next: () => {
             console.log('Cachorro deletado:');
             this.listarCachorro();
           },
@@ -59,6 +63,5 @@ export class ListaCachorroComponent implements OnInit{
     } else {
       console.log('Deleção cancelada pelo usuário.');
     }
-}
-
+  }
 }

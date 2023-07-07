@@ -26,7 +26,8 @@
                 <label>Serviço <span class="text-danger">*</span></label>
                 <select class="form-control" name="servico" [(ngModel)]="agendamento.servico" #servico="ngModel"
                         required>
-                  <option *ngFor="let servico of dadosFormAgendamento.servicos" [ngValue]="servico">{{ servico.nome }}</option>
+                  <option value="undefined" disabled selected>Selecione</option>
+                  <option *ngFor="let servico of dadosFormAgendamento.servicos" [value]="servico">{{ servico.nome }}</option>
                 </select>
                 <div *ngIf="servico.errors && (servico.dirty || servico.touched)" class="text-danger">
                   <div *ngIf="servico.errors.required">Este campo é obrigatório.</div>
@@ -38,7 +39,8 @@
                 <label>Tutor <span class="text-danger">*</span></label>
                 <select class="form-control" name="tutor" [(ngModel)]="agendamento.tutor" #tutor="ngModel"
                         required>
-                  <option *ngFor="let tutor of dadosFormAgendamento.tutores" [ngValue]="tutor">{{ tutor.nome }}</option>
+                  <option value="undefined" disabled selected>Selecione</option>
+                  <option *ngFor="let tutor of dadosFormAgendamento.tutores" [value]="tutor">{{ tutor.nome }}</option>
                 </select>
                 <div *ngIf="tutor.errors && (tutor.dirty || tutor.touched)" class="text-danger">
                   <div *ngIf="tutor.errors.required">Este campo é obrigatório.</div>
@@ -51,7 +53,8 @@
               <div class="form-group">
                 <label>Funcionário</label>
                 <select class="form-control" name="funcionario" [(ngModel)]="agendamento.funcionario" #name="ngModel">
-                  <option *ngFor="let funcionario of dadosFormAgendamento.funcionarios" [ngValue]="funcionario">{{ funcionario.nome }}</option>
+                  <option value="undefined" disabled selected>Selecione</option>
+                  <option *ngFor="let funcionario of dadosFormAgendamento.funcionarios" [value]="funcionario">{{ funcionario.nome }}</option>
                 </select>
               </div>
             </div>
@@ -60,7 +63,8 @@
                 <label>Cachorro <span class="text-danger">*</span></label>
                 <select class="form-control" name="cachorro" [(ngModel)]="agendamento.cachorro" #cachorro="ngModel"
                         required>
-                  <option *ngFor="let cachorro of dadosFormAgendamento.cachorros" [ngValue]="cachorro">{{ cachorro.nome }}</option>
+                  <option value="undefined" disabled selected>Selecione</option>
+                  <option *ngFor="let cachorro of dadosFormAgendamento.cachorros" [value]="cachorro">{{ cachorro.nome }}</option>
                 </select>
                 <div *ngIf="cachorro.errors && (cachorro.dirty || cachorro.touched)" class="text-danger">
                   <div *ngIf="cachorro.errors.required">Este campo é obrigatório.</div>

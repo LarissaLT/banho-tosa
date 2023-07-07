@@ -9,14 +9,24 @@
           <div class="row">
             <div class="col-md-7 pr-2">
               <div class="form-group">
-                <label>Nome</label>
-                <input type="text" class="form-control" name="nome" [(ngModel)]="cachorro.nome" #name="ngModel">
+                <label>Nome <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]="cachorro.nome" #name="ngModel"
+                       required minlength="3">
+                <div class="text-danger" *ngIf="cachorroForm.controls['nome'].invalid && (cachorroForm.controls['nome'].dirty || cachorroForm.controls['nome'].touched)">
+                  <div *ngIf="cachorroForm.controls['nome'].errors.required">Campo obrigatório</div>
+                  <div *ngIf="cachorroForm.controls['nome'].errors.minlength">O nome deve ter pelo menos 3 caracteres</div>
+                </div>
               </div>
             </div>
             <div class="col-md-5 pr-2">
               <div class="form-group">
-                <label>Raça</label>
-                <input type="text" class="form-control" name="raca" [(ngModel)]="cachorro.raca" #name="ngModel">
+                <label>Raça <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="raca" [(ngModel)]="cachorro.raca" #name="ngModel"
+                       required minlength="3">
+                <div class="text-danger" *ngIf="cachorroForm.controls['raca'].invalid && (cachorroForm.controls['raca'].dirty || cachorroForm.controls['raca'].touched)">
+                  <div *ngIf="cachorroForm.controls['raca'].errors.required">Campo obrigatório</div>
+                  <div *ngIf="cachorroForm.controls['raca'].errors.minlength">O nome deve ter pelo menos 3 caracteres</div>
+                </div>
               </div>
             </div>
           </div>
@@ -24,13 +34,14 @@
             <div class="col-md-4 pr-3">
               <div class="form-group">
                 <label>Idade</label>
-                <input type="number" class="form-control" name="idade" [(ngModel)]="cachorro.idade" #name="ngModel">
+                <input type="text" class="form-control" name="idade" [(ngModel)]="cachorro.idade" #name="ngModel">
               </div>
             </div>
             <div class="col-md-4 pr-3">
               <div class="form-group">
                 <label>Porte</label>
                 <select class="form-control" name="porte" [(ngModel)]="cachorro.porte" #name="ngModel">
+                  <option value="undefined" disabled selected>Selecione</option>
                   <option *ngFor="let porte of portes" [value]="porte">{{ porte }}</option>
                 </select>
               </div>
@@ -39,6 +50,7 @@
               <div class="form-group">
                 <label>Gênero</label>
                 <select class="form-control" name="genero" [(ngModel)]="cachorro.genero" #name="ngModel">
+                  <option value="undefined" disabled selected>Selecione</option>
                   <option *ngFor="let genero of generos" [value]="genero">{{ genero }}</option>
                 </select>
               </div>
@@ -50,6 +62,7 @@
             </div>
           </div>
         </form>
+      </div>
     </div>
   </div>
 </div>

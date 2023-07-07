@@ -11,6 +11,10 @@ export class AuthTokenService {
     return localStorage.getItem('jwtToken');
   }
 
+  public invalidateToken(): void {
+    localStorage.removeItem('jwtToken')
+  }
+
   public decodePayloadJWT(): any {
     try {
       return jwt_decode(this.getToken());

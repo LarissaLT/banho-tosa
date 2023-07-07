@@ -7,11 +7,9 @@
             <h4 class="card-title">Lista de Tutores</h4>
           </div>
           <div class="col-4 text-right">
-            <a [routerLink]="['/tutor']">
-              <button class="btn btn-outline-warning btn-round">
-                <i class="fa fa-plus"></i> Cadastrar
-              </button>
-            </a>
+            <button class="btn btn-outline-warning btn-round" (click)="cadastrarTutor()">
+              <i class="fa fa-plus"></i> Cadastrar
+            </button>
           </div>
         </div>
       </div>

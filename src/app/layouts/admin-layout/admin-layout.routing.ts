@@ -40,13 +40,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'funcionario-listar',       component: ListaFuncionarioComponent },
     { path: 'servico-listar',           component: ListaServicoComponent },
     { path: 'funcionario/:id',          component: FuncionarioComponent },
+    { path: 'agendamento/:id',          component: AgendamentoComponent },
     { path: 'cachorro/:id',             component: CachorroComponent },
     { path: 'servico/:id',              component: ServicoComponent },
     { path: 'tutor/:id',                component: TutorComponent },
     { path: 'tutor-listar/:id',         component: TutorComponent },
-    { path: 'agendamento-listar/:id',   component: AgendamentoComponent },
-    { path: 'cachorro-listar/:id',      component: CachorroComponent },
-    { path: 'funcionario-listar/:id',   component: FuncionarioComponent },
-    { path: 'servico-listar/:id',       component: ServicoComponent },
+
 
 ];

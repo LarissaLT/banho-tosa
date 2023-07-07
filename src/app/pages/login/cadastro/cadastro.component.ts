@@ -38,7 +38,7 @@ export class CadastroComponent implements OnInit{
             this.token = auth.token;
             console.log('Token:', this.token);
             localStorage.setItem('jwtToken', this.token);
-            this.router.navigate(['agendamento']);
+            this.router.navigate(['/agendamento']);
           },
           error: (err: any) => {
             console.log(err);

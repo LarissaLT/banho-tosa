@@ -37,12 +37,10 @@ export class LoginComponent {
           // Acessa a informação do papel (role) do usuário
           const userRole = decodedToken.role;
 
-          // if (userRole === 'USER') {
-          //   this.router.navigate(['rota-para-usuarios-comuns']);
-          // } else if (userRole === 'ADMIN') {
-          //   this.router.navigate(['rota-para-administradores']);
-          // }
+          // Redireciona para a página do perfil correspondente
+          this.router.navigate(['/agendamento']);
         },
+
         error: err => {
           console.log(err);
         }

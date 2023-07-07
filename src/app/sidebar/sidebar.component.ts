@@ -45,33 +45,41 @@ export class SidebarComponent implements OnInit {
   initRoutes() {
     ROUTES = []
     this.addTutorRouteByUserRole()
-    this.addAdminOnlyRoutes()
-    this.addCommonRoutes()
+    // this.addAdminOnlyRoutes()
+    // this.addCommonRoutes()
   }
 
   addTutorRouteByUserRole(): void {
     if (this.authTokenService.isUserAdmin()) {
+      ROUTES.push({path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
+      ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/funcionario-listar', title: 'Funcionários', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/servico-listar', title: 'Serviços', icon: 'nc-single-02', class: ''})
       ROUTES.push({path: '/tutor-listar', title: 'Tutores', icon: 'nc-single-02', class: ''})
     } else {
       let path = '/tutor/' + this.authTokenService.getUserId()
       ROUTES.push({path: path, title: 'Perfil', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/agendamento', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
+      ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
+      ROUTES.push({path: '/agendamento-listar', title: 'Histórico', icon: 'nc-calendar-60', class: ''})
+      ROUTES.push({path: '/notifications', title: 'Icones', icon: 'nc-diamond', class: ''})
     }
   }
 
-  addAdminOnlyRoutes(): void {
-    if (this.authTokenService.isUserAdmin()) {
-      ROUTES.push({path: '/funcionario-listar', title: 'Funcionários', icon: 'nc-single-02', class: ''})
-      ROUTES.push({path: '/servico-listar', title: 'Serviços', icon: 'nc-single-02', class: ''})
-    }
-  }
-
-  addCommonRoutes(): void {
-    ROUTES.push({path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
-    ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
-    ROUTES.push({path: '/icons', title: 'Icones', icon: 'nc-diamond', class: ''})
-    ROUTES.push({path: '/notifications', title: 'Icones', icon: 'nc-diamond', class: ''})
-
-
-
-  }
+  // addAdminOnlyRoutes(): void {
+  //   if (this.authTokenService.isUserAdmin()) {
+  //     ROUTES.push({path: '/agendamento-listar', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
+  //     ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
+  //     ROUTES.push({path: '/funcionario-listar', title: 'Funcionários', icon: 'nc-single-02', class: ''})
+  //     ROUTES.push({path: '/servico-listar', title: 'Serviços', icon: 'nc-single-02', class: ''})
+  //
+  //   }
+  // }
+  //
+  // addCommonRoutes(): void {
+  //   ROUTES.push({path: '/agendamento', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
+  //   ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
+  //   ROUTES.push({path: '/notifications', title: 'Icones', icon: 'nc-diamond', class: ''})
+  //
+  // }
 }

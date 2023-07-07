@@ -17,21 +17,22 @@ export class AgendamentoComponent implements OnInit,AfterViewInit {
   erro: string;
   date: Date;
 
+
   constructor(
-    private agendamentoService: AgendamentoHttpService, private router: Router, private route: ActivatedRoute, public authTokenService: AuthTokenService) {
+    private agendamentoService: AgendamentoHttpService, private router: Router, private route: ActivatedRoute,
+    public authTokenService: AuthTokenService) {
   }
 
   ngOnInit() {
-    this.buscarDadosForm()
-    console.log(this.authTokenService.getUserId())
-
     const idAgendamento = this.route.snapshot.params['id'];
-
     console.log(idAgendamento)
 
     if (idAgendamento) {
       this.buscarAgendamento(idAgendamento);
     }
+
+    this.buscarDadosForm()
+    console.log(this.authTokenService.getUserId())
   }
   ngAfterViewInit() {
     flatpickr('#datepicker', {
