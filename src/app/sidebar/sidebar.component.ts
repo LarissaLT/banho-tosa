@@ -65,5 +65,4 @@ export class SidebarComponent implements OnInit {
       ROUTES.push({ path: '/icons', title: 'Icones', icon: 'nc-diamond', class: '' })
     }
   }
-
 }

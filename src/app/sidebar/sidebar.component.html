@@ -1,15 +1,15 @@
 <div class="sidebar-wrapper">
   <div class="logo titulo">
     <div class="simple-text logo-normal">
-      <p>the groomer</p>
+      <img src="assets/img/marca.png">
     </div>
   </div>
-    <ul class="nav">
-        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
-            <a class="bg-white" [routerLink]="[menuItem.path]">
-                <i class="nc-icon text-black {{menuItem.icon}}"></i>
-                <p class="text-black">{{menuItem.title}}</p> <!--título dos itens do menu lateral-->
-            </a>
-        </li>
-    </ul>
+  <ul class="nav">
+    <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+      <a class="bg-white" [routerLink]="[menuItem.path]">
+        <i class="nc-icon text-black {{menuItem.icon}}"></i>
+        <p class="text-black">{{menuItem.title}}</p> <!--título dos itens do menu lateral-->
+      </a>
+    </li>
+  </ul>
 </div>

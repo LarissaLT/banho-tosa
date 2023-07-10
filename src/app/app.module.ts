@@ -42,7 +42,7 @@ import {HeaderComponent} from './pages/usuario/header/header.component';
     FuncionamentoComponent,
     NavbarFooterComponent,
     FooterUsuarioComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -61,6 +61,7 @@ import {HeaderComponent} from './pages/usuario/header/header.component';
     NgOptimizedImage,
     MatDatepickerModule,
     [RouterModule],
+
 
 
   ],

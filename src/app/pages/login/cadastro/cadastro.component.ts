@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {AuthenticationHttpService, Signup} from '../../../service/authenticationHttp.service';
 import {NgForm} from '@angular/forms';
+import {NotificationsComponent} from '../../notifications/notifications.component';
 
 
 @Component({
