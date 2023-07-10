@@ -492,6 +492,12 @@ progress {
   font-weight: 300;
 }
 
+.img-logo{
+  padding: 0 20px 15px 0;
+  width: 150px;
+  height: 150px;
+}
+
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
@@ -598,6 +604,11 @@ progress {
   content: "— ";
 }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -673,9 +684,7 @@ progress {
 }
 .row > * {
   flex-shrink: 0;
-  width: 90%;
-  display: flex;
-  justify-content: center;
+  width: 100%;
   max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
@@ -3900,11 +3909,6 @@ textarea.form-control-lg {
     padding: 0;
     overflow-y: visible;
   }
-
-  .sobre{
-    margin-top: 40px;
-  }
-
 }
 @media (min-width: 768px) {
   .navbar-expand-md {
@@ -11023,4 +11027,3 @@ p {
 .address strong {
   font-size: 1.2rem;
 }
-

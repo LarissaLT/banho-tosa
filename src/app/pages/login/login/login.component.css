@@ -1,8 +1,8 @@
 body {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  height: 90vh;
   background-image: linear-gradient(rgba(47, 23, 15, 0.1), rgba(47, 23, 15, 0.1)), url("fundo.png");
   background-size: cover;
   background-position: center;
@@ -117,6 +117,7 @@ body {
 #mainNav {
   background-color: rgba(47, 23, 15, 0.9);
   width: 100%;
+  margin-top: 0;
   font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 #mainNav .navbar-brand {
@@ -268,7 +269,7 @@ body {
 }
 
 .navbar-nav-scroll {
-  max-height: var(--bs-scroll-height, 75vh);
+  /*max-height: var(--bs-scroll-height, 75vh);*/
   overflow-y: auto;
 }
 

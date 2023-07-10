@@ -1,61 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login</title>
-<!--  <link rel="stylesheet" href="cadastro.component.css">-->
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Dog Bath</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/home">Home</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/funcionamento">Sobre</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/funcionamento">Funcionamento</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/login">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card card-user">
-        <div class="card-body">
-          <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" >
-            <div class="decoration-block">
-              <p class="decoration-text">Sign in</p>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="E-mail" ngModel name="email" >
-                </div>
+<navbar-usuario-cmp></navbar-usuario-cmp>
+<body id="mainNav">
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-body">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          <div class="decoration-block">
+            <p class="decoration-text">Sign in</p>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="E-mail" ngModel name="email">
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <input type="password" id="password" class="form-control" placeholder="Senha" ngModel name="senha"
-                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" ><br>
-                  <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
-                  <label for="showPasswordCheckbox">Mostrar senha</label>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="password" id="password" class="form-control" placeholder="Senha" ngModel name="senha"
+                       [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password"><br>
+                <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
+                <label for="showPasswordCheckbox">Mostrar senha</label>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="update ml-auto mr-auto">
-                  <button type="submit" class="btn btn-warning btn-round btn-block">ENTRAR</button>
-                  <p class="create-account">Não tem uma conta? <a href="http://localhost:4200/#/cadastro" class="signup-link">Registre-se</a></p>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-warning btn-round btn-block">ENTRAR</button>
+                <p class="create-account">Não tem uma conta? <a [routerLink]="['/cadastro']" class="signup-link">Registre-se</a>
+                </p>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
 </body>
-</html>
+

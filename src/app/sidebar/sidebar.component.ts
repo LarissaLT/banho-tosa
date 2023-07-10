@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthTokenService} from '../service/authToken.service';
 import {Tutor, TutorHttpService} from '../service/tutorHttp.service';
 import {Observable, switchMap} from 'rxjs';
+import {IconsComponent} from '../pages/icons/icons.component';
 
 export interface RouteInfo {
   path: string;
@@ -61,6 +62,7 @@ export class SidebarComponent implements OnInit {
       ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
       ROUTES.push({path: '/agendamento-listar', title: 'Histórico', icon: 'nc-calendar-60', class: ''})
       ROUTES.push({path: '/notifications', title: 'Icones', icon: 'nc-diamond', class: ''})
+      ROUTES.push({ path: '/icons', title: 'Icones', icon: 'nc-diamond', class: '' })
     }
   }
 

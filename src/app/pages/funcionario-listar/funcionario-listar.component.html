@@ -19,22 +19,23 @@
         <div class="table-responsive" style="overflow: hidden !important;">
           <table class="table">
             <thead class=" text-warning">
-              <th>Nome</th>
-              <th></th>
+            <th>Nome</th>
+            <th></th>
             </thead>
             <tbody>
-              <tr *ngFor="let funcionario of funcionariosTableData">
-                <td>{{funcionario.nome}}</td>
-                <td class="text-right">
+            <tr *ngFor="let funcionario of funcionariosTableData">
+              <td>{{funcionario.nome}}</td>
+              <td class="text-right">
                 <a [routerLink]="['/funcionario', funcionario.id]">
                   <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">
                     <i class="fa fa-pencil"></i>
                   </button>
                 </a>
-                <button class="btn btn-danger btn-icon btn-round btn-sm" (click)="deletarFuncionario(funcionario.id)" title="Excluir">
+                <button class="btn btn-danger btn-icon btn-round btn-sm" (click)="deletarFuncionario(funcionario.id)"
+                        title="Excluir">
                   <i class="fa fa-trash"></i>
                 </button>
-              </tr>
+            </tr>
             </tbody>
           </table>
         </div>

@@ -1,47 +1,47 @@
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        <div class="row">
-          <div class="col-8">
-            <h4 class="card-title">Lista de Agendamentos</h4>
-          </div>
-          <div class="col-4 text-right">
-            <button class="btn btn-outline-warning btn-round" (click)="cadastrarAgendamento()">
-              <i class="fa fa-plus"></i> Cadastrar
-            </button>
-          </div>
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-8">
+          <h4 class="card-title">Lista de Agendamentos</h4>
         </div>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive" style="overflow: hidden !important;">
-          <table class="table">
-            <thead class=" text-warning">
-              <th>Data</th>
-              <th>Serviço</th>
-              <th>Funcionário</th>
-              <th>Cachorro</th>
-              <th *ngIf="this.authTokenService.isUserAdmin()">Tutor</th>
-              <th></th>
-            </thead>
-            <tbody>
-              <tr *ngFor="let agendamento of agendamentosTableData">
-                <td>{{ agendamento.data | date:'dd/MM/yyyy'}}</td>
-                <td>{{ agendamento.servico.nome }}</td>
-                <td>{{ agendamento.funcionario.nome }}</td>
-                <td>{{ agendamento.cachorro.nome }}</td>
-                <td *ngIf="this.authTokenService.isUserAdmin()">{{ agendamento.tutor.nome }}</td>
-                <td class="text-right" style="margin-top: 10px;">
-                  <a [routerLink]="['/agendamento', agendamento.id]">
-                    <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">
-                      <i class="fa fa-pencil"></i>
-                    </button>
-                  </a>
-                </td>
-            </tr>
-            </tbody>
-          </table>
+        <div class="col-4 text-right">
+          <button class="btn btn-outline-warning btn-round" (click)="cadastrarAgendamento()">
+            <i class="fa fa-plus"></i> Cadastrar
+          </button>
         </div>
       </div>
     </div>
+    <div class="card-body">
+      <div class="table-responsive" style="overflow: hidden !important;">
+        <table class="table">
+          <thead class=" text-warning">
+          <th>Data</th>
+          <th>Serviço</th>
+          <th>Funcionário</th>
+          <th>Cachorro</th>
+          <th *ngIf="this.authTokenService.isUserAdmin()">Tutor</th>
+          <th></th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let agendamento of agendamentosTableData">
+            <td>{{ agendamento.data | date:'dd/MM/yyyy'}}</td>
+            <td>{{ agendamento.servico.nome }}</td>
+            <td>{{ agendamento.funcionario.nome }}</td>
+            <td>{{ agendamento.cachorro.nome }}</td>
+            <td *ngIf="this.authTokenService.isUserAdmin()">{{ agendamento.tutor.nome }}</td>
+            <td class="text-right" style="margin-top: 10px;">
+              <a [routerLink]="['/agendamento', agendamento.id]">
+                <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">
+                  <i class="fa fa-pencil"></i>
+                </button>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+</div>
 

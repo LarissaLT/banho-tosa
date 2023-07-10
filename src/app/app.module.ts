@@ -25,6 +25,9 @@ import {NavbarModule} from './shared/navbar/navbar.module';
 import {SidebarModule} from './sidebar/sidebar.module';
 import {AppRoutesAdmin} from './app.routing';
 import {ServicosOferecidosComponent} from './pages/usuario/servicos/servicos-oferecidos.component';
+import {NavbarFooterComponent} from './pages/usuario/navbar-usuario/navbar-usuario.component';
+import {FooterUsuarioComponent} from './pages/usuario/footer-usuario/footer-usuario.component';
+import {HeaderComponent} from './pages/usuario/header/header.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import {ServicosOferecidosComponent} from './pages/usuario/servicos/servicos-ofe
     LoginComponent,
     CadastroComponent,
     FuncionamentoComponent,
+    NavbarFooterComponent,
+    FooterUsuarioComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -55,7 +61,6 @@ import {ServicosOferecidosComponent} from './pages/usuario/servicos/servicos-ofe
     NgOptimizedImage,
     MatDatepickerModule,
     [RouterModule],
-
 
 
   ],

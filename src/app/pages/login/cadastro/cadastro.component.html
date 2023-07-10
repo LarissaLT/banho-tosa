@@ -1,72 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login</title>
-<!--  <link rel="stylesheet" href="cadastro.component.css">-->
-</head>
-<body>
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Dog Bath</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/home">Home</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/funcionamento">Sobre</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/funcionamento">Funcionamento</a></li>
-        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="http://localhost:4200/#/login">Login</a></li>
-      </ul>
-    </div>
+<navbar-usuario-cmp></navbar-usuario-cmp>
+<div class="grid-container">
+  <div class="left-section">
+    <img class="img-logo"
+         src="https://img.freepik.com/fotos-gratis/cao-bonito-vista-frontal-em-traje_23-2148423660.jpg?w=360&t=st=1687840153~exp=1687840753~hmac=d9ceb4b658a6c780877557fec280d461579c7da2616e5fe86f68c0cba9a93005"
+         alt="...">
   </div>
-</nav>
-  <div class="grid-container">
-    <div class="left-section">
-      <img class="img-logo" src="https://img.freepik.com/fotos-gratis/cao-bonito-vista-frontal-em-traje_23-2148423660.jpg?w=360&t=st=1687840153~exp=1687840753~hmac=d9ceb4b658a6c780877557fec280d461579c7da2616e5fe86f68c0cba9a93005" alt="...">
-    </div>
-    <div class="right-section">
-      <div class="card card-user">
-        <div class="card-body">
-          <div class="card-header" class="signin">
-            <h4 class="font-weight-bolder signin-texto">Registre-se</h4>
-            <p class="mb-0">Preencha e se cadastre!</p>
-          </div>
-          <form #cadastroForm="ngForm" (ngSubmit)="cadastrarTutor(cadastroForm)">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label>Nome Completo</label>
-                  <input type="text" class="form-control" name="nome" [(ngModel)]="signup.nome" #name="ngModel">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label>E-mail</label>
-                  <input type="text" class="form-control" name="email" [(ngModel)]="signup.email" #name="ngModel">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label>Senha</label>
-                  <input type="text" class="form-control" name="senha" #name="ngModel"
-                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="signup.senha"><br>
-                  <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
-                  <label for="showPasswordCheckbox">Mostrar senha</label>
-                </div>
-              </div>
-            </div>
-            <div class="update ml-auto mr-auto">
-              <button type="submit" class="btn btn-warning btn-round btn-block">CADASTRAR</button>
-              <p class="create-account">Já tenho conta!<a href="http://localhost:4200/#/login" class="signin-link"> Login</a></p>
-            </div>
-          </form>
+  <div class="right-section">
+    <div class="card card-user">
+      <div class="card-body">
+        <div class="card-header" class="signin">
+          <h4 class="font-weight-bolder signin-texto">Registre-se</h4>
+          <p class="mb-0">Preencha e se cadastre!</p>
         </div>
+        <form #cadastroForm="ngForm" (ngSubmit)="cadastrarTutor(cadastroForm)">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" class="form-control" name="nome" [(ngModel)]="signup.nome" #name="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>E-mail</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="signup.email" #name="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Senha</label>
+                <input type="text" class="form-control" name="senha" #name="ngModel"
+                       [type]="showPassword ? 'text' : 'password'" [(ngModel)]="signup.senha"><br>
+                <input type="checkbox" id="showPasswordCheckbox" [(ngModel)]="showPassword">
+                <label for="showPasswordCheckbox">Mostrar senha</label>
+              </div>
+            </div>
+          </div>
+          <div class="update ml-auto mr-auto">
+            <button type="submit" class="btn btn-warning btn-round btn-block">CADASTRAR</button>
+            <p class="create-account">Já tenho conta!<a [routerLink]="['/login']" class="signin-link">
+              Login</a></p>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</body>
-</html>
+</div>

@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import {AuthenticationHttpService, Signin} from '../../../service/authenticationHttp.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import jwtDecode from 'jwt-decode';
+import {AuthTokenService} from '../../../service/authToken.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginComponent {
   password: string;
   showPassword: boolean;
 
-  constructor(private authService:AuthenticationHttpService, private router: Router, private route: ActivatedRoute) {
+  constructor(private authService:AuthenticationHttpService, private router: Router, private route: ActivatedRoute,
+              private authTokenService: AuthTokenService) {
     this.showPassword = undefined;
   }
 
@@ -38,7 +40,7 @@ export class LoginComponent {
           const userRole = decodedToken.role;
 
           // Redireciona para a página do perfil correspondente
-          this.router.navigate(['/agendamento']);
+          this.redirectToPerfil();
         },
 
         error: err => {
@@ -46,5 +48,13 @@ export class LoginComponent {
         }
       }
     );
+  }
+
+  public redirectToPerfil(){
+    if(this.authTokenService.isUserAdmin()){
+      this.router.navigate(['/tutor-listar']);
+    } else{
+      this.router.navigate(['/tutor', this.authTokenService.getUserId()]);
+    }
   }
 }

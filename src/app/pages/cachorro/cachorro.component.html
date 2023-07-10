@@ -12,9 +12,11 @@
                 <label>Nome <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="nome" [(ngModel)]="cachorro.nome" #name="ngModel"
                        required minlength="3">
-                <div class="text-danger" *ngIf="cachorroForm.controls['nome'].invalid && (cachorroForm.controls['nome'].dirty || cachorroForm.controls['nome'].touched)">
+                <div class="text-danger"
+                     *ngIf="cachorroForm.controls['nome'].invalid && (cachorroForm.controls['nome'].dirty || cachorroForm.controls['nome'].touched)">
                   <div *ngIf="cachorroForm.controls['nome'].errors.required">Campo obrigatório</div>
-                  <div *ngIf="cachorroForm.controls['nome'].errors.minlength">O nome deve ter pelo menos 3 caracteres</div>
+                  <div *ngIf="cachorroForm.controls['nome'].errors.minlength">O nome deve ter pelo menos 3 caracteres
+                  </div>
                 </div>
               </div>
             </div>
@@ -23,9 +25,11 @@
                 <label>Raça <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="raca" [(ngModel)]="cachorro.raca" #name="ngModel"
                        required minlength="3">
-                <div class="text-danger" *ngIf="cachorroForm.controls['raca'].invalid && (cachorroForm.controls['raca'].dirty || cachorroForm.controls['raca'].touched)">
+                <div class="text-danger"
+                     *ngIf="cachorroForm.controls['raca'].invalid && (cachorroForm.controls['raca'].dirty || cachorroForm.controls['raca'].touched)">
                   <div *ngIf="cachorroForm.controls['raca'].errors.required">Campo obrigatório</div>
-                  <div *ngIf="cachorroForm.controls['raca'].errors.minlength">O nome deve ter pelo menos 3 caracteres</div>
+                  <div *ngIf="cachorroForm.controls['raca'].errors.minlength">O nome deve ter pelo menos 3 caracteres
+                  </div>
                 </div>
               </div>
             </div>

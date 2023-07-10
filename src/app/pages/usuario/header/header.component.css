@@ -169,6 +169,13 @@ p {
   margin-bottom: 1rem;
 }
 
+.titulo{
+  font-family: 'Sacramento', cursive;
+  font-size:100px;
+  color: rgb(227, 221, 201);
+  margin: 0 0 40px 0;
+}
+
 abbr[title] {
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
@@ -214,6 +221,10 @@ dd {
 blockquote {
   margin: 0 0 1rem;
 }
+
+
+
+
 
 b,
 strong {
@@ -598,6 +609,11 @@ progress {
   content: "— ";
 }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -673,9 +689,7 @@ progress {
 }
 .row > * {
   flex-shrink: 0;
-  width: 90%;
-  display: flex;
-  justify-content: center;
+  width: 100%;
   max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
@@ -3900,11 +3914,6 @@ textarea.form-control-lg {
     padding: 0;
     overflow-y: visible;
   }
-
-  .sobre{
-    margin-top: 40px;
-  }
-
 }
 @media (min-width: 768px) {
   .navbar-expand-md {
@@ -10889,6 +10898,7 @@ p {
 #mainNav {
   background-color: rgba(47, 23, 15, 0.9);
   font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-top: 40px;
 }
 #mainNav .navbar-brand {
   color: #e6a756;

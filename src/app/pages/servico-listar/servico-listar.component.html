@@ -11,32 +11,34 @@
               <button class="btn btn-outline-warning btn-round">
                 <i class="fa fa-plus"></i> Cadastrar
               </button>
-            </a>          </div>
+            </a>
+          </div>
         </div>
       </div>
       <div class="card-body">
         <div class="table-responsive" style="overflow: hidden !important;">
           <table class="table">
             <thead class=" text-warning">
-              <th>Nome</th>
-              <th>Peço</th>
-              <th></th>
+            <th>Nome</th>
+            <th>Peço</th>
+            <th></th>
             </thead>
             <tbody>
-              <tr *ngFor="let servico of servicosTableData">
-                <td>{{servico.nome}}</td>
-                <td>{{servico.preco}}</td>
-                <td class="text-right">
-                  <a [routerLink]="['/servico', servico.id]">
-                    <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">
-                      <i class="fa fa-pencil"></i>
-                    </button>
-                  </a>
-                  <button class="btn btn-danger btn-icon btn-round btn-sm" (click)="deletarServico(servico.id)" title="Excluir">
-                    <i class="fa fa-trash"></i>
+            <tr *ngFor="let servico of servicosTableData">
+              <td>{{servico.nome}}</td>
+              <td>{{servico.preco}}</td>
+              <td class="text-right">
+                <a [routerLink]="['/servico', servico.id]">
+                  <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">
+                    <i class="fa fa-pencil"></i>
                   </button>
-                </td>
-              </tr>
+                </a>
+                <button class="btn btn-danger btn-icon btn-round btn-sm" (click)="deletarServico(servico.id)"
+                        title="Excluir">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
             </tbody>
           </table>
         </div>
