@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {AuthTokenService} from '../../service/authToken.service';
 import {Genero} from '../../service/cachorroHttp.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'tutor-cmp',
@@ -18,7 +19,7 @@ export class TutorComponent implements OnInit {
 
   constructor(
     private tutorService: TutorHttpService, private router: Router, private route: ActivatedRoute,
-    public authTokenService: AuthTokenService) {
+    public authTokenService: AuthTokenService, private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -36,7 +37,6 @@ export class TutorComponent implements OnInit {
       {
         next: (tutorSalvo: Tutor) => {
           console.log('Tutor salvo:', tutorSalvo);
-          this.router.navigate(['tutor-listar']);
         },
         error: (err: any) => {
           console.log('ERROR:', err);
@@ -52,7 +52,6 @@ export class TutorComponent implements OnInit {
       {
         next: (tutorSalvo: Tutor) => {
           console.log('Tutor salvo:', tutorSalvo);
-          this.router.navigate(['tutor-listar']);
         },
         error: (err: any) => {
           console.log('ERROR:', err);
@@ -72,16 +71,20 @@ export class TutorComponent implements OnInit {
       nome: form.value.nome,
       celular: form.value.celular,
       email: form.value.email,
-      role: roleKey?roleKey:this.tutor.role, // o campo role escondido (isAdmin) estava vindo null
-    } as Tutor
+      role: roleKey ? roleKey : this.tutor.role, // o campo role escondido (isAdmin) estava vindo null
+    } as Tutor;
 
-    console.log(this.tutor)
+    console.log(this.tutor);
 
     if (tutor.id) {
-      this.atualizarTutor(tutor)
-      return
+      this.atualizarTutor(tutor);
+    } else {
+      this.salvarTutor(tutor);
     }
-    this.salvarTutor(tutor)
+
+    if (this.authTokenService.isUserAdmin()) {
+      this.router.navigate(['/tutor-listar']);
+    }
   }
 
   buscarTutor(id: number) {
@@ -94,6 +97,20 @@ export class TutorComponent implements OnInit {
         alert('Ocorreu um erro ao buscar o tutor.');
         this.erro = error;
       }
+    });
+  }
+
+  showNotificationSuccess(from: string, align: string) {
+    const notificationOptions = {
+      timeOut: 2000,
+      closeButton: true,
+      enableHtml: true,
+      positionClass: "toast-" + from + "-" + align
+    };
+
+    this.toastr.success('<span data-notify="icon" class="nc-icon nc-refresh-69"></span><span data-notify="message">Perfil Atualizado!</b></span>', '', {
+      ...notificationOptions,
+      toastClass: 'alert alert-warning alert-with-icon'
     });
   }
 }

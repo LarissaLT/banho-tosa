@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationHttpService, Signup} from '../../../service/authenticationHttp.service';
 import {NgForm} from '@angular/forms';
 import {NotificationsComponent} from '../../notifications/notifications.component';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -12,7 +13,7 @@ import {NotificationsComponent} from '../../notifications/notifications.componen
   styleUrls: ['cadastro.component.css']
 })
 
-export class CadastroComponent implements OnInit{
+export class CadastroComponent implements OnInit {
 
   password: string;
   showPassword: boolean;
@@ -22,12 +23,14 @@ export class CadastroComponent implements OnInit{
   token: string;
 
   constructor(
-    private authenticationService: AuthenticationHttpService, private router: Router, private route: ActivatedRoute) {
+    private authenticationService: AuthenticationHttpService, private router: Router, private route: ActivatedRoute,
+    private toastr: ToastrService) {
 
     this.showPassword = undefined;
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   cadastrarTutor(formCadastro: NgForm) {
     console.log(this.signup);
@@ -53,4 +56,18 @@ export class CadastroComponent implements OnInit{
       }
     });
   }
+
+  showNotificationSuccess(from: string, align: string) {
+    const notificationOptions = {
+      timeOut: 100000,
+      closeButton: true,
+      enableHtml: true,
+      positionClass: `toast-${from}-${align}`
+    };
+
+    this.toastr.success('<span data-notify="icon" class="nc-icon nc-bookmark-2"></span><span data-notify="message">Cadastro Salvo!<br><b>Complete o seu perfil.</b></span>', '', {
+      ...notificationOptions,
+      toastClass: 'alert alert-success alert-with-icon'
+    });
   }
+}

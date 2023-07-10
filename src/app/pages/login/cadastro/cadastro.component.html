@@ -25,7 +25,13 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label>E-mail</label>
-                <input type="text" class="form-control" name="email" [(ngModel)]="signup.email" #name="ngModel">
+                <input type="text" class="form-control" name="email" [(ngModel)]="signup.email" #name="ngModel"
+                       required email>
+                <div class="text-danger"
+                     *ngIf="cadastroForm.controls['email'].invalid && (cadastroForm.controls['email'].dirty || cadastroForm.controls['email'].touched)">
+                  <div *ngIf="cadastroForm.controls['email'].errors.required">Campo obrigatório</div>
+                  <div *ngIf="cadastroForm.controls['email'].errors.email">E-mail inválido</div>
+                </div>
               </div>
             </div>
           </div>
@@ -41,7 +47,7 @@
             </div>
           </div>
           <div class="update ml-auto mr-auto">
-            <button type="submit" class="btn btn-warning btn-round btn-block">CADASTRAR</button>
+            <button type="submit" class="btn btn-warning btn-round btn-block" [disabled]="cadastroForm.invalid" (click)="showNotificationSuccess('top','right')">CADASTRAR</button>
             <p class="create-account">Já tenho conta!<a [routerLink]="['/login']" class="signin-link">
               Login</a></p>
           </div>

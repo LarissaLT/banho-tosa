@@ -6,7 +6,7 @@
           <h4 class="card-title">Lista de Agendamentos</h4>
         </div>
         <div class="col-4 text-right">
-          <button class="btn btn-outline-warning btn-round" (click)="cadastrarAgendamento()">
+          <button class="btn btn-outline-warning btn-round" (click)="cadastrarAgendamento()" *ngIf="this.authTokenService.isUserAdmin()">
             <i class="fa fa-plus"></i> Cadastrar
           </button>
         </div>
