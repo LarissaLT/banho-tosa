@@ -68,7 +68,7 @@
                         required>
                   <option value="undefined" disabled selected>Selecione</option>
                   <option *ngFor="let cachorro of dadosFormAgendamento.cachorros"
-                          [ngValue]="cachorro.id">{{ cachorro.nome }}</option>
+                          [ngValue]="cachorro">{{ cachorro.nome }}</option>
                 </select>
                 <div *ngIf="cachorro.errors && (cachorro.dirty || cachorro.touched)" class="text-danger">
                   <div *ngIf="cachorro.errors.required">Este campo é obrigatório.</div>
