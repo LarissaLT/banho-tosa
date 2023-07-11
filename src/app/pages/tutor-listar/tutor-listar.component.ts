@@ -3,6 +3,7 @@ import {
   Component, OnInit
 } from '@angular/core';
 import {Router} from '@angular/router';
+import {AuthTokenService} from '../../service/authToken.service';
 
 @Component({
   selector: 'tutor-listar-cmp',
@@ -12,7 +13,7 @@ import {Router} from '@angular/router';
 
 export class ListaTutorComponent implements OnInit {
 
-  constructor(private tutorService: TutorHttpService, private router: Router) {
+  constructor(private tutorService: TutorHttpService, private router: Router, public authTokenService:AuthTokenService) {
   }
 
   public tutoresTableData: Tutor[];

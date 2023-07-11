@@ -6,7 +6,7 @@
           <div class="col-8">
             <h4 class="card-title">Lista de Cachorros</h4>
           </div>
-          <div class="col-4 text-right">
+          <div class="col-4 text-right" *ngIf="!this.authTokenService.isUserAdmin()">
             <button class="btn btn-outline-warning btn-round" (click)="cadastrarCachorro()">
               <i class="fa fa-plus"></i> Cadastrar
             </button>

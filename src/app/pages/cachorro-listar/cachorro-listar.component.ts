@@ -11,7 +11,7 @@ import {AuthTokenService} from '../../service/authToken.service';
 
 export class ListaCachorroComponent implements OnInit {
 
-  constructor(private cachorroService: CachorroHttpService, private router: Router) {
+  constructor(private cachorroService: CachorroHttpService, private router: Router, public authTokenService:AuthTokenService) {
   }
 
   public cachorrosTableData: Cachorro[];

@@ -61,8 +61,6 @@ export class SidebarComponent implements OnInit {
       ROUTES.push({path: '/agendamento', title: 'Agendamentos', icon: 'nc-calendar-60', class: ''})
       ROUTES.push({path: '/cachorro-listar', title: 'Cachorros', icon: 'nc-single-02', class: ''})
       ROUTES.push({path: '/agendamento-listar', title: 'Histórico', icon: 'nc-calendar-60', class: ''})
-      ROUTES.push({path: '/notifications', title: 'Icones', icon: 'nc-diamond', class: ''})
-      ROUTES.push({ path: '/icons', title: 'Icones', icon: 'nc-diamond', class: '' })
     }
   }
 }

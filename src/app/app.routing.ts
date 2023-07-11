@@ -8,8 +8,6 @@ import {LoginComponent} from './pages/login/login/login.component';
 import {CadastroComponent} from './pages/login/cadastro/cadastro.component';
 import {AuthGuard} from './service/AuthGuard';
 import {ServicosOferecidosComponent} from './pages/usuario/servicos/servicos-oferecidos.component';
-import {AgendamentoComponent} from './pages/agendamento/agendamento.component';
-import {ListaAgendamentoComponent} from './pages/agendamento-listar/agendamento-listar.component';
 
 
 export const AppRoutesAdmin: Routes = [

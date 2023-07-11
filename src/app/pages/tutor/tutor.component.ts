@@ -3,7 +3,6 @@ import {Role, Tutor, TutorHttpService} from 'app/service/tutorHttp.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {AuthTokenService} from '../../service/authToken.service';
-import {Genero} from '../../service/cachorroHttp.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
@@ -71,10 +70,13 @@ export class TutorComponent implements OnInit {
       nome: form.value.nome,
       celular: form.value.celular,
       email: form.value.email,
+      cachorros: this.tutor.cachorros,
+      endereco  : form.value.endereco,
       role: roleKey ? roleKey : this.tutor.role, // o campo role escondido (isAdmin) estava vindo null
     } as Tutor;
 
-    console.log(this.tutor);
+
+    console.log(tutor);
 
     if (tutor.id) {
       this.atualizarTutor(tutor);

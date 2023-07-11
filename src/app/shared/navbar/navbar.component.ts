@@ -81,9 +81,7 @@ export class NavbarComponent implements OnInit {
         mainPanel.style.position = '';
       }, 500);
     }
-    this.toggleButton.classList.remove('toggled');
     this.sidebarVisible = false;
-    html.classList.remove('nav-open');
   };
 
   collapse() {

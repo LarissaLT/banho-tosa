@@ -6,7 +6,7 @@
           <div class="col-8">
             <h4 class="card-title">Lista de Tutores</h4>
           </div>
-          <div class="col-4 text-right">
+          <div class="col-4 text-right" *ngIf="!this.authTokenService.isUserAdmin()">
             <button class="btn btn-outline-warning btn-round" (click)="cadastrarTutor()">
               <i class="fa fa-plus"></i> Cadastrar
             </button>
@@ -20,7 +20,6 @@
             <th>Name</th>
             <th>Celular</th>
             <th>E-mail</th>
-            <th>Role</th>
             <th></th>
             </thead>
             <tbody>
@@ -28,7 +27,6 @@
               <td>{{tutor.nome}}</td>
               <td>{{tutor.celular}}</td>
               <td>{{tutor.email}}</td>
-              <td>{{tutor.role}}</td>
               <td class="text-right">
                 <a [routerLink]="['/tutor', tutor.id]">
                   <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">

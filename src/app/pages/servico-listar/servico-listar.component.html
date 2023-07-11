@@ -20,13 +20,11 @@
           <table class="table">
             <thead class=" text-warning">
             <th>Nome</th>
-            <th>Peço</th>
             <th></th>
             </thead>
             <tbody>
             <tr *ngFor="let servico of servicosTableData">
               <td>{{servico.nome}}</td>
-              <td>{{servico.preco}}</td>
               <td class="text-right">
                 <a [routerLink]="['/servico', servico.id]">
                   <button class="btn btn-info btn-icon btn-round btn-sm" title="Atualizar" style="margin-right:5px;">
