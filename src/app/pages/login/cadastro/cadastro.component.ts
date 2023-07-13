@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationHttpService, Signup} from '../../../service/authenticationHttp.service';
 import {NgForm} from '@angular/forms';
-import {NotificationsComponent} from '../../notifications/notifications.component';
 import {ToastrService} from 'ngx-toastr';
+import {AuthTokenService} from '../../../service/authToken.service';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationHttpService, private router: Router, private route: ActivatedRoute,
-    private toastr: ToastrService) {
+    private toastr: ToastrService, private authTokenService: AuthTokenService) {
 
     this.showPassword = undefined;
   }
@@ -42,7 +42,7 @@ export class CadastroComponent implements OnInit {
             this.token = auth.token;
             console.log('Token:', this.token);
             localStorage.setItem('jwtToken', this.token);
-            this.router.navigate(['/agendamento']);
+            this.router.navigate(['/tutor', this.authTokenService.getUserId()]);
           },
           error: (err: any) => {
             console.log(err);
@@ -59,7 +59,7 @@ export class CadastroComponent implements OnInit {
 
   showNotificationSuccess(from: string, align: string) {
     const notificationOptions = {
-      timeOut: 100000,
+      timeOut: 10000,
       closeButton: true,
       enableHtml: true,
       positionClass: `toast-${from}-${align}`

@@ -26,7 +26,11 @@ export class ListaFuncionarioComponent implements OnInit{
 //loadin
     this.funcionarioService.listar().subscribe(
       {
-        next: (response:Funcionario[]) => {this.funcionariosTableData=response},
+        next: (response: Funcionario[]) => {
+          this.funcionariosTableData = response.sort((a, b) => {
+            return a.nome.localeCompare(b.nome);
+          });
+        },
         error: (err: any) => {
           console.log('ERROR: '+err)
           alert("deu merda")

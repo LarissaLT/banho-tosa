@@ -11,7 +11,7 @@
               <div class="form-group">
                 <label>Nome Completo <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" name="nome" [(ngModel)]="tutor.nome" #name="ngModel"
-                       required minlength="5" pattern="[a-zA-Z ]*">
+                       required minlength="5" pattern="[a-zA-ZÀ-ú ]*">
                 <div class="text-danger"
                      *ngIf="tutorForm.controls['nome'].invalid && (tutorForm.controls['nome'].dirty || tutorForm.controls['nome'].touched)">
                   <div *ngIf="tutorForm.controls['nome'].errors.required">Campo obrigatório</div>

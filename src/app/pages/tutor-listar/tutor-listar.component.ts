@@ -31,7 +31,9 @@ export class ListaTutorComponent implements OnInit {
     this.tutorService.listar().subscribe(
       {
         next: (response: Tutor[]) => {
-          this.tutoresTableData = response
+          this.tutoresTableData = response.sort((a, b) => {
+            return a.nome.localeCompare(b.nome);
+          });
         },
         error: (err: any) => {
           console.log('ERROR: ' + err)

@@ -21,7 +21,11 @@ export class ListaServicoComponent implements OnInit{
     //loadin
         this.servicoService.listar().subscribe(
           {
-            next: (response:Servico[]) => {this.servicosTableData=response},
+            next: (response: Servico[]) => {
+              this.servicosTableData = response.sort((a, b) => {
+                return a.nome.localeCompare(b.nome);
+              });
+            },
             error: (err: any) => {
               console.log('ERROR: '+err)
               alert("deu merda")

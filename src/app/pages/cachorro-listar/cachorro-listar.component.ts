@@ -29,7 +29,9 @@ export class ListaCachorroComponent implements OnInit {
     this.cachorroService.listar().subscribe(
       {
         next: (response: Cachorro[]) => {
-          this.cachorrosTableData = response
+          this.cachorrosTableData = response.sort((a, b) => {
+            return a.nome.localeCompare(b.nome);
+          });
         },
         error: (err: any) => {
           console.log('ERROR: ' + err)

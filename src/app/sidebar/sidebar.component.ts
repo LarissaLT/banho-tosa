@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AuthTokenService} from '../service/authToken.service';
 import {Tutor, TutorHttpService} from '../service/tutorHttp.service';
 import {Observable, switchMap} from 'rxjs';
-import {IconsComponent} from '../pages/icons/icons.component';
 
 export interface RouteInfo {
   path: string;
@@ -12,16 +11,6 @@ export interface RouteInfo {
 }
 
 export let ROUTES: RouteInfo[] = [
-  // {path: '/dashboard', title: 'Dashboard', icon: 'nc-bank', class: ''},
-  // { path: '/atos',          title: 'Atos Teste',        icon:'nc-air-baloon', class: '' },
-  // {path: '/icons', title: 'Icones', icon: 'nc-diamond', class: ''},
-  // { path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
-  // {path: '/notifications', title: 'Notifications', icon: 'nc-bell-55', class: ''},
-  // { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
-  // {path: '/table', title: 'Table List', icon: 'nc-tile-56', class: ''},
-  // {path: '/typography', title: 'Typography', icon: 'nc-caps-small', class: ''},
-  // {path: '/upgrade', title: 'Upgrade to PRO', icon: 'nc-spaceship', class: 'active-pro'},
-
 ];
 
 @Component({
